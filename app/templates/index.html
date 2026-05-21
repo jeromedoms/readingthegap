@@ -5,23 +5,30 @@
 {% block meta_description %}Reading the Gap: an overview dashboard and capstone site on literacy challenges and instructional interventions in Philippine basic education.{% endblock %}
 
 {% block content %}
-<div class="bg-stone-50 text-stone-900">
-  <section id="intro" class="relative min-h-[100svh] overflow-hidden border-b border-stone-200 scroll-mt-24 md:scroll-mt-28">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<div class="bg-canvas-100 text-ink-900">
+  <!-- INTRO -->
+  <section id="intro" class="relative min-h-[100svh] overflow-hidden border-b border-brand-100 scroll-mt-24 md:scroll-mt-28">
     <div class="absolute inset-0">
       <img
         src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_2560,h_1708/https://edcom2.gov.ph/media/2026/03/EDCOM2-Annual-Report-416-scaled-jpg.webp"
         alt="Students in a classroom setting"
         class="h-full w-full object-cover"
       >
-      <div class="absolute inset-0 bg-black/65"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/80"></div>
+      <div class="absolute inset-0 bg-ink-900/55"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-900/45 via-ink-900/40 to-accent-900/70"></div>
     </div>
 
     <div class="relative flex min-h-[100svh] items-center">
       <div class="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
         <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
-          <div class="lg:col-span-7">
-            <p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-brand-200">
+          <div
+            class="lg:col-span-7"
+            data-aos="fade-right"
+            data-aos-duration="900"
+            data-aos-easing="ease-out-cubic"
+          >
+            <p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-brand-100">
               <span class="material-symbols-outlined text-[18px]">school</span>
               BSED-ENG Group 2 · Capstone Project
             </p>
@@ -30,20 +37,33 @@
               Reading the Gap
             </h1>
 
-            <p class="mt-5 max-w-2xl text-base leading-7 text-white/85 sm:text-lg">
+            <p class="mt-5 max-w-2xl text-base leading-7 text-white/90 sm:text-lg">
               Literacy challenges and instructional interventions in Philippine basic education.
             </p>
 
-            <p class="mt-3 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
+            <p class="mt-3 max-w-2xl text-sm leading-7 text-white/75 sm:text-base">
               This capstone study examines the scale of reading difficulty, the systemic factors behind it, and the evidence-based strategies that show measurable improvement.
             </p>
 
             <div class="mt-7 flex flex-wrap gap-3">
-              <a href="#overview" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-stone-200">
+              <a
+                href="#overview"
+                class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-600"
+                data-aos="fade-up"
+                data-aos-delay="120"
+                data-aos-duration="800"
+              >
                 <span class="material-symbols-outlined text-[18px]">dashboard</span>
                 View overview
               </a>
-              <a href="#dashboards" class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-brand-700/35 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-brand-700/50">
+
+              <a
+                href="#dashboards"
+                class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
+                data-aos="fade-up"
+                data-aos-delay="220"
+                data-aos-duration="800"
+              >
                 <span class="material-symbols-outlined text-[18px]">open_in_new</span>
                 Open SOP dashboards
               </a>
@@ -52,37 +72,57 @@
 
           <div class="lg:col-span-5">
             <div class="grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              <div class="rounded-3xl border border-white/15 bg-white/10 p-5 shadow-sm backdrop-blur-md">
+              <div
+                class="rounded-3xl border border-white/15 bg-brand-100/15 p-5 shadow-soft backdrop-blur-md"
+                data-aos="fade-left"
+                data-aos-delay="120"
+                data-aos-duration="850"
+              >
                 <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-100">
                   <span class="material-symbols-outlined text-[18px]">menu_book</span>
                   Learning poverty
                 </p>
                 <p class="mt-2 text-4xl font-black text-white">{{ overview.learning_poverty }}%</p>
-                <p class="mt-2 text-sm text-white/70">Children unable to read simple text by age 10.</p>
+                <p class="mt-2 text-sm text-white/75">Children unable to read simple text by age 10.</p>
               </div>
 
-              <div class="rounded-3xl border border-white/15 bg-white/10 p-5 shadow-sm backdrop-blur-md">
+              <div
+                class="rounded-3xl border border-white/15 bg-accent-100/15 p-5 shadow-soft backdrop-blur-md"
+                data-aos="fade-left"
+                data-aos-delay="220"
+                data-aos-duration="850"
+              >
                 <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-100">
                   <span class="material-symbols-outlined text-[18px]">query_stats</span>
                   PISA below proficiency
                 </p>
                 <p class="mt-2 text-4xl font-black text-white">{{ overview.pisa_below_proficiency }}%</p>
-                <p class="mt-2 text-sm text-white/70">Students below the minimum reading benchmark.</p>
+                <p class="mt-2 text-sm text-white/75">Students below the minimum reading benchmark.</p>
               </div>
 
-              <div class="rounded-3xl border border-white/15 bg-white/10 p-5 shadow-sm backdrop-blur-md">
+              <div
+                class="rounded-3xl border border-white/15 bg-brand-200/15 p-5 shadow-soft backdrop-blur-md"
+                data-aos="fade-left"
+                data-aos-delay="320"
+                data-aos-duration="850"
+              >
                 <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-100">
                   <span class="material-symbols-outlined text-[18px]">warning</span>
                   Low proficiency
                 </p>
                 <p class="mt-2 text-4xl font-black text-white">{{ overview.low_proficiency }}%</p>
-                <p class="mt-2 text-sm text-white/70">Students clustered in the low proficient band.</p>
+                <p class="mt-2 text-sm text-white/75">Students clustered in the low proficient band.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="mt-12 flex justify-center">
+        <div
+          class="mt-12 flex justify-center"
+          data-aos="fade-up"
+          data-aos-delay="420"
+          data-aos-duration="800"
+        >
           <a href="#overview" class="inline-flex flex-col items-center text-white/70 transition hover:text-white">
             <span class="text-[11px] font-semibold uppercase tracking-[0.28em]">Scroll</span>
             <span class="material-symbols-outlined mt-2 text-[28px]">south</span>
@@ -92,42 +132,48 @@
     </div>
   </section>
 
-  <section id="overview" class="border-b border-stone-200 bg-white scroll-mt-24 md:scroll-mt-28">
+  <!-- Overview -->
+  <section id="overview" class="border-b border-brand-100 bg-canvas-50 scroll-mt-24 md:scroll-mt-28">
     <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
+      <div
+        class="max-w-3xl"
+        data-aos="fade-right"
+        data-aos-duration="850"
+        data-aos-easing="ease-out-cubic"
+      >
         <p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-brand-700">
           <span class="material-symbols-outlined text-[18px]">insights</span>
           Overview
         </p>
-        <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-stone-950 sm:text-4xl">
+        <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-ink-900 sm:text-4xl">
           The literacy gap is wide, unequal, and still deeply persistent.
         </h2>
-        <p class="mt-4 text-sm leading-7 text-stone-600 sm:text-base">
+        <p class="mt-4 text-sm leading-7 text-ink-500 sm:text-base">
           The study brings together three connected views: where reading difficulty is most visible, what systemic conditions sustain it, and which interventions offer the strongest measured gains.
         </p>
       </div>
 
       <div class="mt-8 grid gap-4 md:grid-cols-3">
-        <article class="rounded-3xl border border-stone-200 bg-stone-50 p-5">
+        <article class="rounded-3xl border border-brand-100 bg-brand-50 p-5 shadow-soft" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
           <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">SOP 1</p>
-          <h3 class="mt-2 text-lg font-bold text-stone-950">Extent of reading difficulty</h3>
-          <p class="mt-2 text-sm leading-7 text-stone-600">
+          <h3 class="mt-2 text-lg font-bold text-ink-900">Extent of reading difficulty</h3>
+          <p class="mt-2 text-sm leading-7 text-ink-500">
             Examines non-readiness by grade level, proficiency by school classification, and overall proficiency distribution.
           </p>
         </article>
 
-        <article class="rounded-3xl border border-stone-200 bg-stone-50 p-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">SOP 2</p>
-          <h3 class="mt-2 text-lg font-bold text-stone-950">Systemic factors</h3>
-          <p class="mt-2 text-sm leading-7 text-stone-600">
+        <article class="rounded-3xl border border-accent-200 bg-accent-50 p-5 shadow-soft" data-aos="fade-up" data-aos-delay="180" data-aos-duration="800">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent-700">SOP 2</p>
+          <h3 class="mt-2 text-lg font-bold text-ink-900">Systemic factors</h3>
+          <p class="mt-2 text-sm leading-7 text-ink-500">
             Identifies structural pressures such as learning poverty, teacher mismatch, instructional loss, and developmental risk.
           </p>
         </article>
 
-        <article class="rounded-3xl border border-stone-200 bg-stone-50 p-5">
+        <article class="rounded-3xl border border-brand-100 bg-canvas-50 p-5 shadow-soft" data-aos="fade-up" data-aos-delay="260" data-aos-duration="800">
           <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">SOP 3</p>
-          <h3 class="mt-2 text-lg font-bold text-stone-950">Intervention strategies</h3>
-          <p class="mt-2 text-sm leading-7 text-stone-600">
+          <h3 class="mt-2 text-lg font-bold text-ink-900">Intervention strategies</h3>
+          <p class="mt-2 text-sm leading-7 text-ink-500">
             Compares reading interventions through pretest, posttest, and mean gain outcomes.
           </p>
         </article>
@@ -135,56 +181,57 @@
     </div>
   </section>
 
-  <section id="literature" class="border-b border-stone-200 scroll-mt-24 md:scroll-mt-28">
+  <!-- Literature -->
+  <section id="literature" class="border-b border-brand-100 bg-canvas-100 scroll-mt-24 md:scroll-mt-28">
     <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
       <div class="grid gap-10 lg:grid-cols-12">
-        <div class="lg:col-span-4">
+        <div class="lg:col-span-4" data-aos="fade-right" data-aos-duration="850" data-aos-easing="ease-out-cubic">
           <p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-brand-700">
             <span class="material-symbols-outlined text-[18px]">library_books</span>
             Literature
           </p>
-          <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-stone-950 sm:text-4xl">
+          <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-ink-900 sm:text-4xl">
             What the literature consistently points to
           </h2>
         </div>
 
         <div class="lg:col-span-8 grid gap-4 sm:grid-cols-2">
-          <article class="rounded-3xl border border-stone-200 bg-white p-5 shadow-sm">
-            <h3 class="inline-flex items-center gap-2 text-base font-bold text-stone-950">
+          <article class="rounded-3xl border border-brand-100 bg-white/80 p-5 shadow-soft" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+            <h3 class="inline-flex items-center gap-2 text-base font-bold text-ink-900">
               <span class="material-symbols-outlined text-[18px] text-brand-700">menu_book</span>
               Foundational reading matters early
             </h3>
-            <p class="mt-2 text-sm leading-7 text-stone-600">
+            <p class="mt-2 text-sm leading-7 text-ink-500">
               Reading difficulty at early stages can persist and intensify when not addressed through sustained support.
             </p>
           </article>
 
-          <article class="rounded-3xl border border-stone-200 bg-white p-5 shadow-sm">
-            <h3 class="inline-flex items-center gap-2 text-base font-bold text-stone-950">
-              <span class="material-symbols-outlined text-[18px] text-brand-700">public</span>
+          <article class="rounded-3xl border border-accent-200 bg-white/80 p-5 shadow-soft" data-aos="fade-up" data-aos-delay="180" data-aos-duration="800">
+            <h3 class="inline-flex items-center gap-2 text-base font-bold text-ink-900">
+              <span class="material-symbols-outlined text-[18px] text-accent-700">public</span>
               Inequality shapes achievement
             </h3>
-            <p class="mt-2 text-sm leading-7 text-stone-600">
+            <p class="mt-2 text-sm leading-7 text-ink-500">
               Access, geography, and school context influence how literacy gaps appear and persist across learners.
             </p>
           </article>
 
-          <article class="rounded-3xl border border-stone-200 bg-white p-5 shadow-sm">
-            <h3 class="inline-flex items-center gap-2 text-base font-bold text-stone-950">
+          <article class="rounded-3xl border border-brand-100 bg-white/80 p-5 shadow-soft" data-aos="fade-up" data-aos-delay="260" data-aos-duration="800">
+            <h3 class="inline-flex items-center gap-2 text-base font-bold text-ink-900">
               <span class="material-symbols-outlined text-[18px] text-brand-700">query_stats</span>
               Assessment results show urgency
             </h3>
-            <p class="mt-2 text-sm leading-7 text-stone-600">
+            <p class="mt-2 text-sm leading-7 text-ink-500">
               National and international indicators point to widespread reading weakness that requires action beyond routine instruction.
             </p>
           </article>
 
-          <article class="rounded-3xl border border-stone-200 bg-white p-5 shadow-sm">
-            <h3 class="inline-flex items-center gap-2 text-base font-bold text-stone-950">
-              <span class="material-symbols-outlined text-[18px] text-brand-700">lightbulb</span>
+          <article class="rounded-3xl border border-accent-200 bg-white/80 p-5 shadow-soft" data-aos="fade-up" data-aos-delay="340" data-aos-duration="800">
+            <h3 class="inline-flex items-center gap-2 text-base font-bold text-ink-900">
+              <span class="material-symbols-outlined text-[18px] text-accent-700">lightbulb</span>
               Interventions can work
             </h3>
-            <p class="mt-2 text-sm leading-7 text-stone-600">
+            <p class="mt-2 text-sm leading-7 text-ink-500">
               The literature also shows that well-designed reading interventions can produce meaningful gains under real classroom conditions.
             </p>
           </article>
@@ -193,78 +240,83 @@
     </div>
   </section>
 
-  <section id="methods" class="border-b border-stone-200 bg-white scroll-mt-24 md:scroll-mt-28">
+  <!-- Methods -->
+  <section id="methods" class="border-b border-brand-100 bg-brand-50/40 scroll-mt-24 md:scroll-mt-28">
     <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
+      <div class="max-w-3xl" data-aos="fade-right" data-aos-duration="850" data-aos-easing="ease-out-cubic">
         <p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-brand-700">
           <span class="material-symbols-outlined text-[18px]">analytics</span>
           Methodology
         </p>
-        <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-stone-950 sm:text-4xl">
+        <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-ink-900 sm:text-4xl">
           How the study was organized
         </h2>
-        <p class="mt-4 text-sm leading-7 text-stone-600 sm:text-base">
+        <p class="mt-4 text-sm leading-7 text-ink-500 sm:text-base">
           The study used a descriptive-analytical design and combined secondary quantitative data with literature-based synthesis to build a broader picture of reading literacy conditions.
         </p>
       </div>
 
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <article class="rounded-3xl border border-stone-200 bg-stone-50 p-5">
+        <article class="rounded-3xl border border-brand-100 bg-white/80 p-5 shadow-soft" data-aos="fade-up" data-aos-delay="100" data-aos-duration="780">
           <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Design</p>
-          <p class="mt-2 text-sm font-semibold text-stone-950">Descriptive-analytical</p>
+          <p class="mt-2 text-sm font-semibold text-ink-900">Descriptive-analytical</p>
         </article>
-        <article class="rounded-3xl border border-stone-200 bg-stone-50 p-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Sources</p>
-          <p class="mt-2 text-sm font-semibold text-stone-950">National and international educational datasets</p>
+
+        <article class="rounded-3xl border border-accent-200 bg-white/80 p-5 shadow-soft" data-aos="fade-up" data-aos-delay="180" data-aos-duration="780">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent-700">Sources</p>
+          <p class="mt-2 text-sm font-semibold text-ink-900">National and international educational datasets</p>
         </article>
-        <article class="rounded-3xl border border-stone-200 bg-stone-50 p-5">
+
+        <article class="rounded-3xl border border-brand-100 bg-white/80 p-5 shadow-soft" data-aos="fade-up" data-aos-delay="260" data-aos-duration="780">
           <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Analysis</p>
-          <p class="mt-2 text-sm font-semibold text-stone-950">Comparative and aggregated reading indicators</p>
+          <p class="mt-2 text-sm font-semibold text-ink-900">Comparative and aggregated reading indicators</p>
         </article>
-        <article class="rounded-3xl border border-stone-200 bg-stone-50 p-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Review</p>
-          <p class="mt-2 text-sm font-semibold text-stone-950">Evidence-based intervention synthesis</p>
+
+        <article class="rounded-3xl border border-accent-200 bg-white/80 p-5 shadow-soft" data-aos="fade-up" data-aos-delay="340" data-aos-duration="780">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent-700">Review</p>
+          <p class="mt-2 text-sm font-semibold text-ink-900">Evidence-based intervention synthesis</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="results" class="border-b border-stone-200 scroll-mt-24 md:scroll-mt-28">
+  <!-- Results -->
+  <section id="results" class="border-b border-brand-100 bg-canvas-50 scroll-mt-24 md:scroll-mt-28">
     <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
+      <div class="max-w-3xl" data-aos="fade-right" data-aos-duration="850" data-aos-easing="ease-out-cubic">
         <p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-brand-700">
           <span class="material-symbols-outlined text-[18px]">fact_check</span>
           Key findings
         </p>
-        <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-stone-950 sm:text-4xl">
+        <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-ink-900 sm:text-4xl">
           Quick reads from the study
         </h2>
-        <p class="mt-4 text-sm leading-7 text-stone-600 sm:text-base">
+        <p class="mt-4 text-sm leading-7 text-ink-500 sm:text-base">
           These cards summarize the major patterns before you move into the full SOP dashboards.
         </p>
       </div>
 
       <div class="mt-8 grid gap-4 lg:grid-cols-3">
-        <article class="rounded-[28px] border border-stone-200 bg-white p-6 shadow-sm">
+        <article class="rounded-[28px] border border-brand-100 bg-brand-50 p-6 shadow-soft" data-aos="fade-up" data-aos-delay="100" data-aos-duration="820">
           <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Finding 1</p>
-          <h3 class="mt-2 text-xl font-black uppercase text-stone-950">Reading difficulty remains high across later grade levels.</h3>
-          <p class="mt-3 text-sm leading-7 text-stone-600">
+          <h3 class="mt-2 text-xl font-black uppercase text-ink-900">Reading difficulty remains high across later grade levels.</h3>
+          <p class="mt-3 text-sm leading-7 text-ink-500">
             The problem is not confined to early elementary years. It continues into higher grade levels, suggesting weak recovery from early reading gaps.
           </p>
         </article>
 
-        <article class="rounded-[28px] border border-stone-200 bg-white p-6 shadow-sm">
-          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Finding 2</p>
-          <h3 class="mt-2 text-xl font-black uppercase text-stone-950">School context shapes proficiency outcomes.</h3>
-          <p class="mt-3 text-sm leading-7 text-stone-600">
+        <article class="rounded-[28px] border border-accent-200 bg-accent-50 p-6 shadow-soft" data-aos="fade-up" data-aos-delay="180" data-aos-duration="820">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent-700">Finding 2</p>
+          <h3 class="mt-2 text-xl font-black uppercase text-ink-900">School context shapes proficiency outcomes.</h3>
+          <p class="mt-3 text-sm leading-7 text-ink-500">
             Proficiency varies sharply across school classifications, with already disadvantaged contexts showing the weakest outcomes.
           </p>
         </article>
 
-        <article class="rounded-[28px] border border-stone-200 bg-white p-6 shadow-sm">
+        <article class="rounded-[28px] border border-brand-100 bg-white p-6 shadow-soft" data-aos="fade-up" data-aos-delay="260" data-aos-duration="820">
           <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Finding 3</p>
-          <h3 class="mt-2 text-xl font-black uppercase text-stone-950">Interventions show that improvement is still possible.</h3>
-          <p class="mt-3 text-sm leading-7 text-stone-600">
+          <h3 class="mt-2 text-xl font-black uppercase text-ink-900">Interventions show that improvement is still possible.</h3>
+          <p class="mt-3 text-sm leading-7 text-ink-500">
             Several approaches produced positive gains, especially those combining structure, creativity, collaboration, and multimodal support.
           </p>
         </article>
@@ -272,276 +324,327 @@
     </div>
   </section>
 
-  <section id="dashboards" class="border-b border-stone-200 bg-white scroll-mt-24 md:scroll-mt-28">
-  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-    <div class="max-w-3xl">
-      <p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-brand-700">
-        <span class="material-symbols-outlined text-[18px]">dashboard_customize</span>
-        Embedded dashboards
-      </p>
-      <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-stone-950 sm:text-4xl">
-        Explore the three statements of the problem in one page
-      </h2>
-      <p class="mt-4 text-sm leading-7 text-stone-600 sm:text-base">
-        Switch between SOP 1, SOP 2, and SOP 3 without leaving the page. Each view includes its own chart, interpretation, and controls.
-      </p>
-    </div>
-
-    <div class="mt-8 rounded-[28px] border border-stone-200 bg-white p-5 shadow-sm">
-      <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Dashboard tabs</p>
-          <h3 class="mt-1 text-lg font-bold text-stone-950">Interactive research views</h3>
-          <p class="mt-1 text-sm text-stone-500">Open one view at a time for a cleaner comparison flow.</p>
-        </div>
-
-        <div class="flex flex-wrap gap-2" id="dashboardTabs">
-          <button type="button" data-dashboard-tab="sop1" class="rounded-full border border-brand-300 bg-brand-50 px-3 py-2 text-xs font-semibold text-brand-800 transition">
-            SOP 1
-          </button>
-          <button type="button" data-dashboard-tab="sop2" class="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold text-stone-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
-            SOP 2
-          </button>
-          <button type="button" data-dashboard-tab="sop3" class="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold text-stone-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
-            SOP 3
-          </button>
-        </div>
+  <!-- Dashboards -->
+  <section id="dashboards" class="border-b border-brand-100 bg-canvas-100 scroll-mt-24 md:scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <div class="max-w-3xl" data-aos="fade-right" data-aos-duration="850" data-aos-easing="ease-out-cubic">
+        <p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-brand-700">
+          <span class="material-symbols-outlined text-[18px]">dashboard_customize</span>
+          Embedded dashboards
+        </p>
+        <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-ink-900 sm:text-4xl">
+          Explore the three statements of the problem in one page
+        </h2>
+        <p class="mt-4 text-sm leading-7 text-ink-500 sm:text-base">
+          Switch between SOP 1, SOP 2, and SOP 3 without leaving the page. Each view includes its own chart, interpretation, and controls.
+        </p>
       </div>
 
-      <div class="mt-6 space-y-6">
-        <section data-dashboard-panel="sop1" class="dashboard-panel is-active">
-          <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">SOP 1</p>
-              <h3 class="mt-1 text-lg font-bold text-stone-950">Reading gap across grade levels and school contexts</h3>
-              <p class="mt-1 text-sm text-stone-500">Switch views to compare grade levels, school types, and proficiency levels.</p>
-            </div>
-
-            <div class="flex flex-wrap gap-2">
-              <button type="button" data-sop1-view="grades" class="rounded-full border border-brand-300 bg-brand-50 px-3 py-2 text-xs font-semibold text-brand-800 transition">
-                SOP 1A -  Grade Levels </button>
-            <button type="button" data-sop1-view="schools" class="rounded-full border border-brand-300 bg-brand-50 px-3 py-2 text-xs font-semibold text-brand-800 transition">
-                SOP 1B - School Types </button>
-            <button type="button" data-sop1-view="levels" class="rounded-full border border-brand-300 bg-brand-50 px-3 py-2 text-xs font-semibold text-brand-800 transition">
-               SOP 1C — Proficiency Levels </button>    
-            </div>
+      <div class="mt-8 rounded-[28px] border border-brand-100 bg-white/90 p-5 shadow-soft" data-aos="fade-up" data-aos-delay="120" data-aos-duration="850">
+        <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Dashboard tabs</p>
+            <h3 class="mt-1 text-lg font-bold text-ink-900">Interactive research views</h3>
+            <p class="mt-1 text-sm text-ink-500">Open one view at a time for a cleaner comparison flow.</p>
           </div>
 
-          <div id="sop1SchoolFilters" class="mt-4 flex flex-wrap gap-2 rounded-2xl border border-stone-200 bg-stone-50 p-3">
-            <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
-              <input type="checkbox" class="h-4 w-4 accent-[#365256]" data-school-filter="Madrasah MEP" checked>
-              Madrasah MEP
-            </label>
-            <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
-              <input type="checkbox" class="h-4 w-4 accent-[#365256]" data-school-filter="National Average" checked>
-              National Average
-            </label>
-            <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
-              <input type="checkbox" class="h-4 w-4 accent-[#365256]" data-school-filter="Last Mile" checked>
-              Last Mile
-            </label>
-            <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
-              <input type="checkbox" class="h-4 w-4 accent-[#365256]" data-school-filter="GIDA" checked>
-              GIDA
-            </label>
-            <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
-              <input type="checkbox" class="h-4 w-4 accent-[#365256]" data-school-filter="Hardship Post" checked>
-              Hardship Post
-            </label>
-            <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
-              <input type="checkbox" class="h-4 w-4 accent-[#365256]" data-school-filter="IP Ed" checked>
-              IP Ed
-            </label>
+          <div class="flex flex-wrap gap-2" id="dashboardTabs">
+            <button type="button" data-dashboard-tab="sop1" class="rounded-full border border-brand-300 bg-brand-50 px-3 py-2 text-xs font-semibold text-brand-800 transition">
+              SOP 1
+            </button>
+            <button type="button" data-dashboard-tab="sop2" class="rounded-full border border-accent-200 bg-accent-50 px-3 py-2 text-xs font-semibold text-accent-800 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
+              SOP 2
+            </button>
+            <button type="button" data-dashboard-tab="sop3" class="rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-semibold text-ink-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
+              SOP 3
+            </button>
           </div>
+        </div>
 
-          <div class="mt-5 grid gap-6 xl:grid-cols-12">
-            <div class="xl:col-span-8">
-              <div class="h-[360px] sm:h-[420px]">
-                <canvas id="sop1Chart"></canvas>
-              </div>
-            </div>
-
-            <div class="xl:col-span-4 rounded-[24px] bg-brand-50/60 p-5">
-              <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-800">
-                <span class="material-symbols-outlined text-[18px]">visibility</span>
-                Interpretation
-              </p>
-              <h4 id="sop1InsightTitle" class="mt-3 text-base font-bold text-stone-950">School context strongly affects reading proficiency.</h4>
-              <p id="sop1InsightText" class="mt-2 text-sm leading-7 text-stone-600">
-                This view shows the percentage proficiency rates across school classifications and lets you focus only on the school types you want to compare.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section data-dashboard-panel="sop2" class="hidden">
+        <div class="mt-6 space-y-6">
+          <section data-dashboard-panel="sop1" class="dashboard-panel is-active">
   <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
     <div>
-      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">SOP 2</p>
-      <h3 class="mt-1 text-lg font-bold text-stone-950">Systemic factors affecting reading literacy</h3>
-      <p class="mt-1 text-sm text-stone-500">Hover over each bar to update the interpretation.</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">SOP 1</p>
+      <h3 class="mt-1 text-lg font-bold text-stone-950">Reading gap across grade levels and school contexts</h3>
+      <p class="mt-1 text-sm text-stone-500">Switch views to compare grade levels, school types, and proficiency levels.</p>
     </div>
+
+    <div class="flex flex-wrap gap-2">
+      <button type="button" data-sop1-view="grades" class="rounded-full border border-brand-300 bg-brand-50 px-3 py-2 text-xs font-semibold text-brand-800 transition">
+        SOP 1A - Grade Levels
+      </button>
+      <button type="button" data-sop1-view="schools" class="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold text-stone-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
+        SOP 1B - School Types
+      </button>
+      <button type="button" data-sop1-view="levels" class="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold text-stone-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
+        SOP 1C — Proficiency Levels
+      </button>
+    </div>
+  </div>
+
+  <div id="sop1SortWrap" class="mt-4 flex flex-wrap items-center gap-2">
+
+    <button
+      type="button"
+      data-sop1-sort="grade"
+      class="rounded-full border border-brand-300 bg-brand-50 px-3 py-2 text-xs font-semibold text-brand-800 transition"
+    >
+      Sort by grade
+    </button>
+
+    <button
+      type="button"
+      data-sop1-sort="ascending"
+      class="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold text-stone-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800"
+    >
+      Sort ascending
+    </button>
+
+    <button
+        type="button"
+        data-sop1-sort="descending"
+        class="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold text-stone-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800"
+        >
+        Sort descending
+        </button>
+  </div>
+
+  <div id="sop1SchoolFilters" class="mt-4 hidden flex-wrap gap-2 rounded-2xl border border-stone-200 bg-stone-50 p-3">
+    <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
+      <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-school-filter="Madrasah MEP" checked>
+      Madrasah MEP
+    </label>
+    <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
+      <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-school-filter="National Average" checked>
+      National Average
+    </label>
+    <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
+      <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-school-filter="Last Mile" checked>
+      Last Mile
+    </label>
+    <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
+      <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-school-filter="GIDA" checked>
+      GIDA
+    </label>
+    <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
+      <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-school-filter="Hardship Post" checked>
+      Hardship Post
+    </label>
+    <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
+      <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-school-filter="IP Ed" checked>
+      IP Ed
+    </label>
   </div>
 
   <div class="mt-5 grid gap-6 xl:grid-cols-12">
     <div class="xl:col-span-8">
       <div class="h-[360px] sm:h-[420px]">
-        <canvas id="sop2Chart"></canvas>
+        <canvas id="sop1Chart"></canvas>
       </div>
     </div>
 
     <div class="xl:col-span-4 rounded-[24px] bg-brand-50/60 p-5">
-        <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-800">
-            <span class="material-symbols-outlined text-[18px]">visibility</span>
-            Interpretation
-        </p>
-        <h4 id="sop2InsightTitle" class="mt-3 text-base font-bold text-stone-950">
-            The reading gap is driven by overlapping systemic pressures.
-        </h4>
-        <p id="sop2InsightText" class="mt-2 text-sm leading-7 text-stone-600">
-            Hover over a bar to see what each systemic factor means and how it contributes to the literacy gap.
-        </p>
-
-        <div id="sop2HowToUse" class="mt-6 rounded-2xl border border-brand-100 bg-white/80 p-4">
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">How to use</p>
-            <ul class="mt-3 space-y-2 text-sm leading-6 text-stone-600">
-            <li>Hover over a bar to inspect one factor.</li>
-            <li>Compare bar heights to understand relative magnitude.</li>
-            <li>Use the panel to connect numbers to policy meaning.</li>
-            </ul>
-        </div>
-        </div>
-  </div>
-</section>
-
-        <section data-dashboard-panel="sop3" class="hidden">
-          <div class="flex flex-col gap-4">
-            <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-              <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">SOP 3</p>
-                <h3 class="mt-1 text-lg font-bold text-stone-950">Intervention effectiveness by metric</h3>
-                <p class="mt-1 text-sm text-stone-500">Switch between mean gain, pretest, and posttest, then reorder the interventions.</p>
-              </div>
-
-              <div class="flex flex-wrap gap-2">
-                <button type="button" data-sop3-metric="gain" class="rounded-full border border-brand-300 bg-brand-50 px-3 py-2 text-xs font-semibold text-brand-800 transition">
-                  Mean Gain
-                </button>
-                <button type="button" data-sop3-metric="pretest" class="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold text-stone-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
-                  Pretest
-                </button>
-                <button type="button" data-sop3-metric="posttest" class="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold text-stone-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
-                  Posttest
-                </button>
-              </div>
-            </div>
-
-            <div class="flex flex-wrap gap-2">
-              <button type="button" data-sop3-sort="gain" class="rounded-full border border-brand-300 bg-brand-50 px-3 py-2 text-xs font-semibold text-brand-800 transition">
-                Sort by gain
-              </button>
-              <button type="button" data-sop3-sort="alpha" class="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold text-stone-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
-                Sort alphabetically
-              </button>
-            </div>
-
-            <div class="grid gap-6 xl:grid-cols-12">
-              <div class="xl:col-span-8">
-                <div class="h-[360px] sm:h-[420px]">
-                  <canvas id="sop3Chart"></canvas>
-                </div>
-              </div>
-
-              <div class="xl:col-span-4 rounded-[24px] bg-brand-50/60 p-5">
-                <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-800">
-                  <span class="material-symbols-outlined text-[18px]">visibility</span>
-                  Interpretation
-                </p>
-                <h4 id="sop3InsightTitle" class="mt-3 text-base font-bold text-stone-950">Mean gain highlights which interventions produce the strongest improvement.</h4>
-                <p id="sop3InsightText" class="mt-2 text-sm leading-7 text-stone-600">
-                  In the current view, the chart emphasizes comparative improvement rather than starting or ending scores.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+      <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-800">
+        <span class="material-symbols-outlined text-[18px]">visibility</span>
+        Interpretation
+      </p>
+      <h4 id="sop1InsightTitle" class="mt-3 text-base font-bold text-stone-950">Higher grade levels show heavier reading non-readiness.</h4>
+      <p id="sop1InsightText" class="mt-2 text-sm leading-7 text-stone-600">
+        Reading difficulty remains high as learners move into upper grade levels, suggesting that early deficits are not fully corrected over time.
+      </p>
     </div>
   </div>
 </section>
 
-  <section id="recommendations" class="border-b border-stone-200 scroll-mt-24 md:scroll-mt-28">
+          <section data-dashboard-panel="sop2" class="dashboard-panel">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent-700">SOP 2</p>
+                <h3 class="mt-1 text-lg font-bold text-ink-900">Systemic factors affecting reading literacy</h3>
+                <p class="mt-1 text-sm text-ink-500">Hover over each bar to update the interpretation.</p>
+              </div>
+            </div>
+
+            <div class="mt-5 grid gap-6 xl:grid-cols-12">
+              <div class="xl:col-span-8">
+                <div class="h-[360px] sm:h-[420px]">
+                  <canvas id="sop2Chart"></canvas>
+                </div>
+              </div>
+
+              <div class="xl:col-span-4 rounded-[24px] bg-accent-50/80 p-5">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent-800">
+                  <span class="material-symbols-outlined text-[18px]">visibility</span>
+                  Interpretation
+                </p>
+                <h4 id="sop2InsightTitle" class="mt-3 text-base font-bold text-ink-900">
+                  The reading gap is driven by overlapping systemic pressures.
+                </h4>
+                <p id="sop2InsightText" class="mt-2 text-sm leading-7 text-ink-500">
+                  Hover over a bar to see what each systemic factor means and how it contributes to the literacy gap.
+                </p>
+
+                <div id="sop2HowToUse" class="mt-6 rounded-2xl border border-accent-200 bg-white/80 p-4">
+                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent-700">How to use</p>
+                  <ul class="mt-3 space-y-2 text-sm leading-6 text-ink-500">
+                    <li>Hover over a bar to inspect one factor.</li>
+                    <li>Compare bar heights to understand relative magnitude.</li>
+                    <li>Use the panel to connect numbers to policy meaning.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section data-dashboard-panel="sop3" class="dashboard-panel">
+            <div class="flex flex-col gap-4">
+              <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">SOP 3</p>
+                  <h3 class="mt-1 text-lg font-bold text-ink-900">Intervention effectiveness across all metrics</h3>
+                  <p class="mt-1 text-sm text-ink-500">Compare pretest, posttest, and mean gain together, then sort or filter interventions.</p>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                <button type="button" data-sop3-sort="gain" class="rounded-full border border-brand-300 bg-brand-50 px-3 py-2 text-xs font-semibold text-brand-800 transition">
+                  Sort by mean
+                </button>
+                <button type="button" data-sop3-sort="pretest" class="rounded-full border border-accent-200 bg-accent-50 px-3 py-2 text-xs font-semibold text-accent-800 transition">
+                  Sort by pretest
+                </button>
+                <button type="button" data-sop3-sort="posttest" class="rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-semibold text-ink-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
+                  Sort by posttest
+                </button>
+                <button type="button" data-sop3-sort="alpha" class="rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-semibold text-ink-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
+                  Sort alphabetically
+                </button>
+              </div>
+
+              <div id="sop3Filters" class="flex flex-wrap gap-2 rounded-2xl border border-brand-100 bg-canvas-50 p-3">
+                <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
+                  <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="Genre-Based + Canva" checked>
+                  Genre-Based + Canva
+                </label>
+                <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
+                  <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="Music Integration" checked>
+                  Music Integration
+                </label>
+                <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
+                  <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="Canva-assisted CIRC" checked>
+                  Canva-assisted CIRC
+                </label>
+                <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
+                  <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="VR Scaffolding" checked>
+                  VR Scaffolding
+                </label>
+                <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
+                  <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="CORI" checked>
+                  CORI
+                </label>
+              </div>
+
+              <div class="grid gap-6 xl:grid-cols-12">
+                <div class="xl:col-span-8">
+                  <div class="h-[380px] sm:h-[460px]">
+                    <canvas id="sop3Chart"></canvas>
+                  </div>
+                </div>
+
+                <div class="xl:col-span-4 rounded-[24px] bg-brand-50/70 p-5">
+                  <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-800">
+                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                    Interpretation
+                  </p>
+                  <h4 id="sop3InsightTitle" class="mt-3 text-base font-bold text-ink-900">
+                    Grouped bars show each intervention’s starting point, ending point, and observed gain.
+                  </h4>
+                  <p id="sop3InsightText" class="mt-2 text-sm leading-7 text-ink-500">
+                    Compare the three bars within each intervention to read baseline, final performance, and improvement at the same time.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommendations -->
+  <section id="recommendations" class="border-b border-brand-100 bg-brand-50/30 scroll-mt-24 md:scroll-mt-28">
     <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
+      <div class="max-w-3xl" data-aos="fade-right" data-aos-duration="850" data-aos-easing="ease-out-cubic">
         <p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-brand-700">
           <span class="material-symbols-outlined text-[18px]">task_alt</span>
           Recommendations
         </p>
-        <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-stone-950 sm:text-4xl">
+        <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-ink-900 sm:text-4xl">
           Direction for policy and practice
         </h2>
-        <p class="mt-4 text-sm leading-7 text-stone-600 sm:text-base">
+        <p class="mt-4 text-sm leading-7 text-ink-500 sm:text-base">
           The findings suggest that literacy improvement requires both targeted instructional action and broader system support.
         </p>
       </div>
 
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <article class="rounded-3xl border border-stone-200 bg-white p-5 shadow-sm">
-          <h3 class="inline-flex items-center gap-2 text-base font-bold text-stone-950">
+        <article class="rounded-3xl border border-brand-100 bg-white p-5 shadow-soft" data-aos="fade-up" data-aos-delay="100" data-aos-duration="780">
+          <h3 class="inline-flex items-center gap-2 text-base font-bold text-ink-900">
             <span class="material-symbols-outlined text-[18px] text-brand-700">location_on</span>
             Prioritize marginalized school contexts
           </h3>
-          <p class="mt-2 text-sm leading-7 text-stone-600">
+          <p class="mt-2 text-sm leading-7 text-ink-500">
             Direct stronger literacy support to Last Mile, GIDA, Hardship Post, and IP education settings.
           </p>
         </article>
 
-        <article class="rounded-3xl border border-stone-200 bg-white p-5 shadow-sm">
-          <h3 class="inline-flex items-center gap-2 text-base font-bold text-stone-950">
-            <span class="material-symbols-outlined text-[18px] text-brand-700">school</span>
+        <article class="rounded-3xl border border-accent-200 bg-white p-5 shadow-soft" data-aos="fade-up" data-aos-delay="180" data-aos-duration="780">
+          <h3 class="inline-flex items-center gap-2 text-base font-bold text-ink-900">
+            <span class="material-symbols-outlined text-[18px] text-accent-700">school</span>
             Reduce teacher mismatch
           </h3>
-          <p class="mt-2 text-sm leading-7 text-stone-600">
+          <p class="mt-2 text-sm leading-7 text-ink-500">
             Improve subject alignment and literacy-focused teacher development to strengthen classroom instruction.
           </p>
         </article>
 
-        <article class="rounded-3xl border border-stone-200 bg-white p-5 shadow-sm">
-          <h3 class="inline-flex items-center gap-2 text-base font-bold text-stone-950">
+        <article class="rounded-3xl border border-brand-100 bg-white p-5 shadow-soft" data-aos="fade-up" data-aos-delay="260" data-aos-duration="780">
+          <h3 class="inline-flex items-center gap-2 text-base font-bold text-ink-900">
             <span class="material-symbols-outlined text-[18px] text-brand-700">event_repeat</span>
             Protect instructional time
           </h3>
-          <p class="mt-2 text-sm leading-7 text-stone-600">
+          <p class="mt-2 text-sm leading-7 text-ink-500">
             Reduce the long-term effect of recurring instructional disruption through continuity planning.
           </p>
         </article>
 
-        <article class="rounded-3xl border border-stone-200 bg-white p-5 shadow-sm">
-          <h3 class="inline-flex items-center gap-2 text-base font-bold text-stone-950">
-            <span class="material-symbols-outlined text-[18px] text-brand-700">rocket_launch</span>
+        <article class="rounded-3xl border border-accent-200 bg-white p-5 shadow-soft" data-aos="fade-up" data-aos-delay="340" data-aos-duration="780">
+          <h3 class="inline-flex items-center gap-2 text-base font-bold text-ink-900">
+            <span class="material-symbols-outlined text-[18px] text-accent-700">rocket_launch</span>
             Scale effective interventions
           </h3>
-          <p class="mt-2 text-sm leading-7 text-stone-600">
+          <p class="mt-2 text-sm leading-7 text-ink-500">
             Expand strategies that show strong gains, especially multimodal and scaffolded approaches.
           </p>
         </article>
 
-        <article class="rounded-3xl border border-stone-200 bg-white p-5 shadow-sm">
-          <h3 class="inline-flex items-center gap-2 text-base font-bold text-stone-950">
+        <article class="rounded-3xl border border-brand-100 bg-white p-5 shadow-soft" data-aos="fade-up" data-aos-delay="420" data-aos-duration="780">
+          <h3 class="inline-flex items-center gap-2 text-base font-bold text-ink-900">
             <span class="material-symbols-outlined text-[18px] text-brand-700">restaurant</span>
             Support early nutrition and readiness
           </h3>
-          <p class="mt-2 text-sm leading-7 text-stone-600">
+          <p class="mt-2 text-sm leading-7 text-ink-500">
             Address developmental barriers that affect cognition, language, and early reading acquisition.
           </p>
         </article>
 
-        <article class="rounded-3xl border border-stone-200 bg-white p-5 shadow-sm">
-          <h3 class="inline-flex items-center gap-2 text-base font-bold text-stone-950">
-            <span class="material-symbols-outlined text-[18px] text-brand-700">music_note</span>
+        <article class="rounded-3xl border border-accent-200 bg-white p-5 shadow-soft" data-aos="fade-up" data-aos-delay="500" data-aos-duration="780">
+          <h3 class="inline-flex items-center gap-2 text-base font-bold text-ink-900">
+            <span class="material-symbols-outlined text-[18px] text-accent-700">music_note</span>
             Use accessible motivational approaches
           </h3>
-          <p class="mt-2 text-sm leading-7 text-stone-600">
+          <p class="mt-2 text-sm leading-7 text-ink-500">
             Integrate lower-cost strategies such as music and motivation-oriented reading support where resources are limited.
           </p>
         </article>
@@ -549,29 +652,30 @@
     </div>
   </section>
 
-  <section id="team" class="bg-white scroll-mt-24 md:scroll-mt-28">
+  <!-- Team -->
+  <section id="team" class="bg-canvas-50 scroll-mt-24 md:scroll-mt-28">
     <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-      <div class="max-w-3xl">
+      <div class="max-w-3xl" data-aos="fade-right" data-aos-duration="850" data-aos-easing="ease-out-cubic">
         <p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-brand-700">
           <span class="material-symbols-outlined text-[18px]">groups</span>
           The team
         </p>
-        <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-stone-950 sm:text-4xl">
+        <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-ink-900 sm:text-4xl">
           BSED-ENG Group 2
         </h2>
-        <p class="mt-4 text-sm leading-7 text-stone-600 sm:text-base">
+        <p class="mt-4 text-sm leading-7 text-ink-500 sm:text-base">
           The study was prepared by seven proponents from the Bachelor of Secondary Education major in English.
         </p>
       </div>
 
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <article class="rounded-3xl border border-stone-200 bg-stone-50 p-5"><p class="text-base font-bold text-stone-950">Proponent 1</p><p class="mt-1 text-sm text-stone-500">BSED-ENG Gr. 2</p></article>
-        <article class="rounded-3xl border border-stone-200 bg-stone-50 p-5"><p class="text-base font-bold text-stone-950">Proponent 2</p><p class="mt-1 text-sm text-stone-500">BSED-ENG Gr. 2</p></article>
-        <article class="rounded-3xl border border-stone-200 bg-stone-50 p-5"><p class="text-base font-bold text-stone-950">Proponent 3</p><p class="mt-1 text-sm text-stone-500">BSED-ENG Gr. 2</p></article>
-        <article class="rounded-3xl border border-stone-200 bg-stone-50 p-5"><p class="text-base font-bold text-stone-950">Proponent 4</p><p class="mt-1 text-sm text-stone-500">BSED-ENG Gr. 2</p></article>
-        <article class="rounded-3xl border border-stone-200 bg-stone-50 p-5"><p class="text-base font-bold text-stone-950">Proponent 5</p><p class="mt-1 text-sm text-stone-500">BSED-ENG Gr. 2</p></article>
-        <article class="rounded-3xl border border-stone-200 bg-stone-50 p-5"><p class="text-base font-bold text-stone-950">Proponent 6</p><p class="mt-1 text-sm text-stone-500">BSED-ENG Gr. 2</p></article>
-        <article class="rounded-3xl border border-stone-200 bg-stone-50 p-5"><p class="text-base font-bold text-stone-950">Proponent 7</p><p class="mt-1 text-sm text-stone-500">BSED-ENG Gr. 2</p></article>
+        <article class="rounded-3xl border border-brand-100 bg-white p-5 shadow-soft" data-aos="fade-up" data-aos-delay="80" data-aos-duration="720"><p class="text-base font-bold text-ink-900">Proponent 1</p><p class="mt-1 text-sm text-ink-500">BSED-ENG Gr. 2</p></article>
+        <article class="rounded-3xl border border-accent-200 bg-white p-5 shadow-soft" data-aos="fade-up" data-aos-delay="140" data-aos-duration="720"><p class="text-base font-bold text-ink-900">Proponent 2</p><p class="mt-1 text-sm text-ink-500">BSED-ENG Gr. 2</p></article>
+        <article class="rounded-3xl border border-brand-100 bg-white p-5 shadow-soft" data-aos="fade-up" data-aos-delay="200" data-aos-duration="720"><p class="text-base font-bold text-ink-900">Proponent 3</p><p class="mt-1 text-sm text-ink-500">BSED-ENG Gr. 2</p></article>
+        <article class="rounded-3xl border border-accent-200 bg-white p-5 shadow-soft" data-aos="fade-up" data-aos-delay="260" data-aos-duration="720"><p class="text-base font-bold text-ink-900">Proponent 4</p><p class="mt-1 text-sm text-ink-500">BSED-ENG Gr. 2</p></article>
+        <article class="rounded-3xl border border-brand-100 bg-white p-5 shadow-soft" data-aos="fade-up" data-aos-delay="320" data-aos-duration="720"><p class="text-base font-bold text-ink-900">Proponent 5</p><p class="mt-1 text-sm text-ink-500">BSED-ENG Gr. 2</p></article>
+        <article class="rounded-3xl border border-accent-200 bg-white p-5 shadow-soft" data-aos="fade-up" data-aos-delay="380" data-aos-duration="720"><p class="text-base font-bold text-ink-900">Proponent 6</p><p class="mt-1 text-sm text-ink-500">BSED-ENG Gr. 2</p></article>
+        <article class="rounded-3xl border border-brand-100 bg-white p-5 shadow-soft" data-aos="fade-up" data-aos-delay="440" data-aos-duration="720"><p class="text-base font-bold text-ink-900">Proponent 7</p><p class="mt-1 text-sm text-ink-500">BSED-ENG Gr. 2</p></article>
       </div>
     </div>
   </section>
@@ -580,20 +684,46 @@
 {% block scripts %}
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    if (typeof Chart === "undefined") return;
+  if (typeof Chart === "undefined") return;
 
     const brand = {
-      50: "#f2f6f6",
-      100: "#e3ecec",
-      200: "#c7d9da",
-      300: "#a8c3c4",
-      400: "#7fa1a4",
-      500: "#5f8185",
-      600: "#47686c",
-      700: "#365256",
-      800: "#2f4548",
-      900: "#293b3d"
-    };
+  50: "#fcf4f4",
+  100: "#f9e8ec",
+  200: "#f3d1da",
+  300: "#e8acbd",
+  400: "#d987a2",
+  500: "#cb758e",
+  600: "#b85f79",
+  700: "#9b4a62",
+  800: "#7c384d",
+  900: "#602434"
+};
+
+const accent = {
+  50: "#f4f6f3",
+  100: "#e6ebe4",
+  200: "#ced7cb",
+  300: "#afbdab",
+  400: "#8a9d86",
+  500: "#6b7f68",
+  600: "#515e4f",
+  700: "#445042",
+  800: "#374035",
+  900: "#2a3029"
+};
+
+const canvas = {
+  50: "#fcfaf8",
+  100: "#f6f3f1",
+  200: "#ebe5e1",
+  300: "#ddd3cc"
+};
+
+const ink = {
+  900: "#131313",
+  700: "#3b3735",
+  500: "#6f6762"
+};
 
     const valueLabelPlugin = {
       id: "valueLabelPlugin",
@@ -706,118 +836,280 @@
     }
 
     // SOP 1
-    const sop1Buttons = Array.from(document.querySelectorAll("[data-sop1-view]"));
-    const schoolFiltersWrap = document.getElementById("sop1SchoolFilters");
-    const schoolCheckboxes = Array.from(document.querySelectorAll("[data-school-filter]"));
-    const sop1InsightTitle = document.getElementById("sop1InsightTitle");
-    const sop1InsightText = document.getElementById("sop1InsightText");
-    const sop1Ctx = document.getElementById("sop1Chart");
-    let currentSop1View = "grades";
+const sop1Buttons = Array.from(document.querySelectorAll("[data-sop1-view]"));
+const sop1SortButtons = Array.from(document.querySelectorAll("[data-sop1-sort]"));
+const sop1SortWrap = document.getElementById("sop1SortWrap");
+const schoolFiltersWrap = document.getElementById("sop1SchoolFilters");
+const schoolCheckboxes = Array.from(document.querySelectorAll("[data-school-filter]"));
+const sop1InsightTitle = document.getElementById("sop1InsightTitle");
+const sop1InsightText = document.getElementById("sop1InsightText");
+const sop1Ctx = document.getElementById("sop1Chart");
 
-    function visibleSchools() {
-      const visible = schoolCheckboxes.filter(cb => cb.checked).map(cb => cb.dataset.schoolFilter);
-      const filtered = proficiencyData.filter(item => visible.includes(item.label));
-      return {
-        labels: filtered.map(item => item.label),
-        values: filtered.map(item => Number(item.value))
-      };
-    }
+let currentSop1View = "grades";
+let currentSop1Sort = "grade";
+let sop1HoverIndex = null;
 
-    function renderSop1(view) {
-      currentSop1View = view;
-      activatePillButtons(sop1Buttons, sop1Buttons.find(btn => btn.dataset.sop1View === view));
-      if (sop1Chart) sop1Chart.destroy();
+function gradeOrderValue(label) {
+  const match = String(label).match(/Grade\s+(\d+)/i);
+  return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER;
+}
 
-      if (view === "grades") {
-        schoolFiltersWrap.classList.add("hidden");
-        sop1InsightTitle.textContent = "Higher grade levels show heavier reading non-readiness.";
-        sop1InsightText.textContent = "Reading difficulty remains high as learners move into upper grade levels, suggesting that early deficits are not fully corrected over time.";
+function getSop1GradeRows() {
+  const rows = nonReadinessData.map((item) => ({
+    label: item.label || item.grade,
+    value: Number(item.value)
+  }));
 
-        sop1Chart = new Chart(sop1Ctx, {
-          type: "bar",
-          data: {
-            labels: nonReadinessData.map(d => d.label),
-            datasets: [{
-              data: nonReadinessData.map(d => Number(d.value)),
-              backgroundColor: brand[700],
-              borderRadius: 10
-            }]
-          },
-          options: baseHorizontalBarOptions(100, "Non-readiness (%)"),
-          plugins: [valueLabelPlugin]
-        });
-      } else if (view === "schools") {
-        schoolFiltersWrap.classList.remove("hidden");
-        const data = visibleSchools();
+  if (currentSop1Sort === "ascending") {
+    rows.sort((a, b) => a.value - b.value);
+  } else if (currentSop1Sort === "descending") {
+    rows.sort((a, b) => b.value - a.value);
+  } else {
+    rows.sort((a, b) => gradeOrderValue(a.label) - gradeOrderValue(b.label));
+  }
 
-        sop1InsightTitle.textContent = "School context strongly affects reading proficiency.";
-        sop1InsightText.textContent = "Proficiency rates vary sharply by school classification, and the widest gaps appear in already marginalized school contexts.";
+  return rows;
+}
 
-        sop1Chart = new Chart(sop1Ctx, {
-          type: "bar",
-          data: {
-            labels: data.labels,
-            datasets: [{
-              data: data.values,
-              backgroundColor: ["#365256", "#47686c", "#5f8185", "#7fa1a4", "#a8c3c4", "#c7d9da"].slice(0, data.values.length),
-              borderRadius: 10
-            }]
-          },
-          options: baseHorizontalBarOptions(100, "Proficiency (%)"),
-          plugins: [valueLabelPlugin]
-        });
-      } else {
-        schoolFiltersWrap.classList.add("hidden");
-        sop1InsightTitle.textContent = "Most learners are concentrated in the low proficiency range.";
-        sop1InsightText.textContent = "The distribution shows that most assessed learners remain in the low proficient category, leaving only a smaller share at adequate levels and above.";
+function updateSop1SortButtons() {
+  activatePillButtons(
+    sop1SortButtons,
+    sop1SortButtons.find((btn) => btn.dataset.sop1Sort === currentSop1Sort)
+  );
+}
 
-        sop1Chart = new Chart(sop1Ctx, {
-          type: "doughnut",
-          data: {
-            labels: proficiencyLevelsData.map(d => d.label),
-            datasets: [{
-              data: proficiencyLevelsData.map(d => d.value),
-              backgroundColor: [brand[700], "#c2410c", "#94a3b8"],
-              borderWidth: 0
-            }]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-              legend: {
-                position: "bottom",
-                labels: {
-                  color: "#57534e",
-                  usePointStyle: true,
-                  pointStyle: "circle"
-                }
-              }
-            }
+function updateSop1ViewButtons() {
+  activatePillButtons(
+    sop1Buttons,
+    sop1Buttons.find((btn) => btn.dataset.sop1View === currentSop1View)
+  );
+}
+
+function visibleSchools() {
+  const visible = schoolCheckboxes.filter(cb => cb.checked).map(cb => cb.dataset.schoolFilter);
+  const filtered = proficiencyData.filter(item => visible.includes(item.label));
+  return {
+    labels: filtered.map(item => item.label),
+    values: filtered.map(item => Number(item.value))
+  };
+}
+
+function applySop1GradeHoverStyles() {
+  if (!sop1Chart || currentSop1View !== "grades") return;
+
+  const base = brand[700];
+  const dim = hexToRgba(brand[700], 0.22);
+  const borderBase = brand[800];
+  const borderDim = hexToRgba(brand[800], 0.16);
+  const dataLength = sop1Chart.data.datasets[0].data.length;
+
+  sop1Chart.data.datasets[0].backgroundColor = Array.from({ length: dataLength }, (_, index) => {
+    if (sop1HoverIndex === null) return base;
+    return index === sop1HoverIndex ? base : dim;
+  });
+
+  sop1Chart.data.datasets[0].borderColor = Array.from({ length: dataLength }, (_, index) => {
+    if (sop1HoverIndex === null) return borderBase;
+    return index === sop1HoverIndex ? borderBase : borderDim;
+  });
+
+  sop1Chart.update();
+}
+
+function renderSop1(view) {
+  currentSop1View = view;
+  sop1HoverIndex = null;
+  updateSop1ViewButtons();
+
+  if (sop1Chart) {
+    sop1Chart.destroy();
+    sop1Chart = null;
+  }
+
+  if (view === "grades") {
+    sop1SortWrap.classList.remove("hidden");
+    schoolFiltersWrap.classList.add("hidden");
+
+    const rows = getSop1GradeRows();
+
+    sop1InsightTitle.textContent =
+  currentSop1Sort === "ascending"
+    ? "Ascending order highlights the least-to-most severe non-readiness."
+    : currentSop1Sort === "descending"
+      ? "Descending order puts the most severe non-readiness first."
+      : "Higher grade levels show heavier reading non-readiness.";
+
+sop1InsightText.textContent =
+  currentSop1Sort === "ascending"
+    ? "This arrangement makes relative differences easier to scan by ordering grade-level non-readiness from the smallest value to the largest."
+    : currentSop1Sort === "descending"
+      ? "This arrangement makes the highest non-readiness values stand out first, which is useful when you want to emphasize the most affected grades."
+      : "Reading difficulty remains high as learners move into upper grade levels, suggesting that early deficits are not fully corrected over time.";
+
+    updateSop1SortButtons();
+
+    sop1Chart = new Chart(sop1Ctx, {
+      type: "bar",
+      data: {
+        labels: rows.map((d) => d.label),
+        datasets: [{
+          data: rows.map((d) => d.value),
+          backgroundColor: rows.map(() => brand[700]),
+          borderColor: rows.map(() => brand[800]),
+          borderWidth: 1.25,
+          borderRadius: 10,
+          borderSkipped: false
+        }]
+      },
+      options: {
+        ...baseHorizontalBarOptions(100, "Non-readiness (%)"),
+        animation: {
+          duration: 280,
+          easing: "easeOutCubic"
+        },
+        interaction: {
+          mode: "nearest",
+          axis: "y",
+          intersect: true
+        },
+        onHover(event, elements) {
+          const canvas = event?.native?.target;
+          const nextIndex = elements.length ? elements[0].index : null;
+
+          if (elements.length) {
+            const item = rows[nextIndex];
+            sop1InsightTitle.textContent = `${item.label} records ${item.value}% non-readiness.`;
+            sop1InsightText.textContent = "The hovered grade stays emphasized while the remaining bars fade, making single-grade comparison easier.";
+            if (canvas) canvas.style.cursor = "pointer";
+          } else {
+            sop1InsightTitle.textContent = currentSop1Sort === "ascending"
+              ? "Ascending order highlights the least-to-most severe non-readiness."
+              : "Higher grade levels show heavier reading non-readiness.";
+
+            sop1InsightText.textContent = currentSop1Sort === "ascending"
+              ? "This arrangement makes relative differences easier to scan by ordering grade-level non-readiness from the smallest value to the largest."
+              : "Reading difficulty remains high as learners move into upper grade levels, suggesting that early deficits are not fully corrected over time.";
+
+            if (canvas) canvas.style.cursor = "default";
           }
-        });
-      }
-    }
 
-    sop1Buttons.forEach(button => {
-      button.addEventListener("click", () => renderSop1(button.dataset.sop1View));
+          if (sop1HoverIndex !== nextIndex) {
+            sop1HoverIndex = nextIndex;
+            applySop1GradeHoverStyles();
+          }
+        }
+      },
+      plugins: [valueLabelPlugin]
     });
 
-    schoolCheckboxes.forEach((cb) => {
-        cb.addEventListener("change", () => {
-            const count = schoolCheckboxes.filter((item) => item.checked).length;
+    if (!sop1Ctx.dataset.boundLeaveGrades) {
+      sop1Ctx.addEventListener("mouseleave", () => {
+        if (currentSop1View !== "grades" || !sop1Chart) return;
+        sop1HoverIndex = null;
 
-            if (count === 0) {
-            cb.checked = true;
-            renderSop1("schools");
-            return;
-            }
+        sop1InsightTitle.textContent = currentSop1Sort === "ascending"
+          ? "Ascending order highlights the least-to-most severe non-readiness."
+          : "Higher grade levels show heavier reading non-readiness.";
 
-            if (currentSop1View === "schools") {
-            renderSop1("schools");
+        sop1InsightText.textContent = currentSop1Sort === "ascending"
+          ? "This arrangement makes relative differences easier to scan by ordering grade-level non-readiness from the smallest value to the largest."
+          : "Reading difficulty remains high as learners move into upper grade levels, suggesting that early deficits are not fully corrected over time.";
+
+        applySop1GradeHoverStyles();
+      });
+      sop1Ctx.dataset.boundLeaveGrades = "true";
+    }
+
+  } else if (view === "schools") {
+    sop1SortWrap.classList.add("hidden");
+    schoolFiltersWrap.classList.remove("hidden");
+    const data = visibleSchools();
+
+    sop1InsightTitle.textContent = "School context strongly affects reading proficiency.";
+    sop1InsightText.textContent = "Proficiency rates vary sharply by school classification, and the widest gaps appear in already marginalized school contexts.";
+
+    sop1Chart = new Chart(sop1Ctx, {
+      type: "bar",
+      data: {
+        labels: data.labels,
+        datasets: [{
+          data: data.values,
+          backgroundColor: [brand[700], brand[500], accent[500], accent[400], "#c2410c", "#94a3b8"].slice(0, data.values.length),
+          borderRadius: 10,
+          borderSkipped: false
+        }]
+      },
+      options: baseHorizontalBarOptions(100, "Proficiency (%)"),
+      plugins: [valueLabelPlugin]
+    });
+
+  } else {
+    sop1SortWrap.classList.add("hidden");
+    schoolFiltersWrap.classList.add("hidden");
+
+    sop1InsightTitle.textContent = "Most learners are concentrated in the low proficiency range.";
+    sop1InsightText.textContent = "The distribution shows that most assessed learners remain in the low proficient category, leaving only a smaller share at adequate levels and above.";
+
+    sop1Chart = new Chart(sop1Ctx, {
+      type: "doughnut",
+      data: {
+        labels: proficiencyLevelsData.map(d => d.label),
+        datasets: [{
+          data: proficiencyLevelsData.map(d => d.value),
+          backgroundColor: [brand[700], "#c2410c", accent[400]],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: "bottom",
+            labels: {
+              color: "#57534e",
+              usePointStyle: true,
+              pointStyle: "circle"
             }
-        });
-        });
+          }
+        }
+      }
+    });
+  }
+}
+
+sop1Buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    renderSop1(button.dataset.sop1View);
+  });
+});
+
+sop1SortButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    currentSop1Sort = button.dataset.sop1Sort;
+    if (currentSop1View === "grades") {
+      renderSop1("grades");
+    } else {
+      updateSop1SortButtons();
+    }
+  });
+});
+
+schoolCheckboxes.forEach((cb) => {
+  cb.addEventListener("change", () => {
+    const count = schoolCheckboxes.filter((item) => item.checked).length;
+
+    if (count === 0) {
+      cb.checked = true;
+      renderSop1("schools");
+      return;
+    }
+
+    if (currentSop1View === "schools") {
+      renderSop1("schools");
+    }
+  });
+});
 
 
     // SOP 2
@@ -936,100 +1228,259 @@
     }
 
     // SOP 3
-    const sop3MetricButtons = Array.from(document.querySelectorAll("[data-sop3-metric]"));
-    const sop3SortButtons = Array.from(document.querySelectorAll("[data-sop3-sort]"));
-    const sop3InsightTitle = document.getElementById("sop3InsightTitle");
-    const sop3InsightText = document.getElementById("sop3InsightText");
-    const sop3Ctx = document.getElementById("sop3Chart");
+const sop3SortButtons = Array.from(document.querySelectorAll("[data-sop3-sort]"));
+const sop3FilterCheckboxes = Array.from(document.querySelectorAll("[data-sop3-filter]"));
+const sop3InsightTitle = document.getElementById("sop3InsightTitle");
+const sop3InsightText = document.getElementById("sop3InsightText");
+const sop3Ctx = document.getElementById("sop3Chart");
 
-    let sop3Metric = "gain";
-    let sop3Sort = "gain";
+let sop3Sort = "gain";
+let sop3HoveredDatasetIndex = null;
 
-    function sortedInterventions() {
-      const copy = [...interventionsData];
-      if (sop3Sort === "alpha") {
-        copy.sort((a, b) => a.label.localeCompare(b.label));
-      } else {
-        copy.sort((a, b) => Number(b.gain) - Number(a.gain));
-      }
-      return copy;
-    }
+function visibleInterventions() {
+  const visible = sop3FilterCheckboxes
+    .filter((cb) => cb.checked)
+    .map((cb) => cb.dataset.sop3Filter);
 
-    function updateSop3Interpretation() {
-      if (sop3Metric === "gain") {
-        sop3InsightTitle.textContent = "Mean gain highlights which interventions produce the strongest improvement.";
-        sop3InsightText.textContent = "This view emphasizes comparative improvement and helps identify which strategies generated the strongest reading gains.";
-      } else if (sop3Metric === "pretest") {
-        sop3InsightTitle.textContent = "Pretest scores show learner starting points before intervention.";
-        sop3InsightText.textContent = "This view helps compare the baseline levels from which each intervention began.";
-      } else {
-        sop3InsightTitle.textContent = "Posttest scores show where learners ended after intervention.";
-        sop3InsightText.textContent = "This view highlights final performance levels after the reading strategy was implemented.";
-      }
-    }
+  return interventionsData.filter((item) => visible.includes(item.label));
+}
 
-    function renderSop3() {
-      activatePillButtons(sop3MetricButtons, sop3MetricButtons.find(btn => btn.dataset.sop3Metric === sop3Metric));
-      activatePillButtons(sop3SortButtons, sop3SortButtons.find(btn => btn.dataset.sop3Sort === sop3Sort));
-      const data = sortedInterventions();
-      updateSop3Interpretation();
+function sortedInterventions() {
+  const copy = [...visibleInterventions()];
 
-      if (sop3Chart) sop3Chart.destroy();
+  if (sop3Sort === "alpha") {
+    copy.sort((a, b) => a.label.localeCompare(b.label));
+  } else if (sop3Sort === "pretest") {
+    copy.sort((a, b) => Number(b.pretest) - Number(a.pretest));
+  } else if (sop3Sort === "posttest") {
+    copy.sort((a, b) => Number(b.posttest) - Number(a.posttest));
+  } else {
+    copy.sort((a, b) => Number(b.gain) - Number(a.gain));
+  }
 
-      sop3Chart = new Chart(sop3Ctx, {
-        type: "bar",
-        data: {
-          labels: data.map(item => item.label),
-          datasets: [{
-            data: data.map(item => Number(item[sop3Metric])),
-            backgroundColor: ["#365256", "#47686c", "#5f8185", "#c2410c", "#94a3b8"],
-            borderRadius: 10
-          }]
+  return copy;
+}
+
+function setSop3DefaultInsight() {
+  sop3InsightTitle.textContent = "Grouped bars show each intervention’s starting point, ending point, and observed gain.";
+  sop3InsightText.textContent = "Compare the three bars within each intervention to read baseline, final performance, and improvement at the same time.";
+}
+
+function hexToRgba(hex, alpha) {
+  const clean = hex.replace("#", "");
+  const full = clean.length === 3
+    ? clean.split("").map((ch) => ch + ch).join("")
+    : clean;
+
+  const r = parseInt(full.slice(0, 2), 16);
+  const g = parseInt(full.slice(2, 4), 16);
+  const b = parseInt(full.slice(4, 6), 16);
+
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function sop3DatasetColor(baseColor, datasetIndex) {
+  if (sop3HoveredDatasetIndex === null || sop3HoveredDatasetIndex === datasetIndex) {
+    return baseColor;
+  }
+  return hexToRgba(baseColor, 0.22);
+}
+
+function applySop3DatasetStyles() {
+  if (!sop3Chart) return;
+
+  const baseColors = ["#94a3b8", "#365256", "#c2410c"];
+
+  sop3Chart.data.datasets.forEach((dataset, datasetIndex) => {
+    const color = sop3DatasetColor(baseColors[datasetIndex], datasetIndex);
+    dataset.backgroundColor = dataset.data.map(() => color);
+    dataset.borderColor = dataset.data.map(() => color);
+  });
+
+  sop3Chart.update();
+}
+
+function renderSop3() {
+  activatePillButtons(
+    sop3SortButtons,
+    sop3SortButtons.find((btn) => btn.dataset.sop3Sort === sop3Sort)
+  );
+
+  const data = sortedInterventions();
+  sop3HoveredDatasetIndex = null;
+  setSop3DefaultInsight();
+
+  if (sop3Chart) sop3Chart.destroy();
+
+  sop3Chart = new Chart(sop3Ctx, {
+    type: "bar",
+    data: {
+      labels: data.map((item) => item.label),
+      datasets: [
+        {
+          label: "Pretest",
+          data: data.map((item) => Number(item.pretest)),
+          backgroundColor: data.map(() => "#94a3b8"),
+          borderColor: data.map(() => "#94a3b8"),
+          borderWidth: 1,
+          borderRadius: 8,
+          borderSkipped: false
         },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: { legend: { display: false } },
-          scales: {
-            x: {
-              grid: { display: false },
-              ticks: { color: "#57534e" }
-            },
-            y: {
-              beginAtZero: true,
-              grid: { color: "#e7e5e4" },
-              ticks: { color: "#57534e" },
-              title: {
-                display: true,
-                text: sop3Metric === "gain" ? "Mean Gain" : sop3Metric === "pretest" ? "Pretest Mean" : "Posttest Mean",
-                color: "#44403c",
-                font: { size: 12, weight: "600" }
-              }
+        {
+          label: "Posttest",
+          data: data.map((item) => Number(item.posttest)),
+          backgroundColor: data.map(() => "#365256"),
+          borderColor: data.map(() => "#365256"),
+          borderWidth: 1,
+          borderRadius: 8,
+          borderSkipped: false
+        },
+        {
+          label: "Mean Gain",
+          data: data.map((item) => Number(item.gain)),
+          backgroundColor: data.map(() => "#c2410c"),
+          borderColor: data.map(() => "#c2410c"),
+          borderWidth: 1,
+          borderRadius: 8,
+          borderSkipped: false
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: {
+        duration: 260,
+        easing: "easeOutCubic"
+      },
+      interaction: {
+        mode: "nearest",
+        intersect: true
+      },
+      onHover(event, elements) {
+        const canvas = event?.native?.target;
+
+        if (elements.length) {
+          const { datasetIndex, index } = elements[0];
+          const item = data[index];
+          const metricKey = ["pretest", "posttest", "gain"][datasetIndex];
+          const metricLabel = ["Pretest", "Posttest", "Mean Gain"][datasetIndex];
+          const metricValue = Number(item[metricKey]).toFixed(2);
+
+          sop3InsightTitle.textContent = `${item.label} — ${metricLabel}`;
+          sop3InsightText.textContent = `${metricLabel} for ${item.label} is ${metricValue}. The other two metric bars are dimmed so you can focus on this measure first.`;
+
+          if (sop3HoveredDatasetIndex !== datasetIndex) {
+            sop3HoveredDatasetIndex = datasetIndex;
+            applySop3DatasetStyles();
+          }
+
+          if (canvas) canvas.style.cursor = "pointer";
+        } else {
+          setSop3DefaultInsight();
+
+          if (sop3HoveredDatasetIndex !== null) {
+            sop3HoveredDatasetIndex = null;
+            applySop3DatasetStyles();
+          }
+
+          if (canvas) canvas.style.cursor = "default";
+        }
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: "bottom",
+          labels: {
+            color: "#57534e",
+            usePointStyle: true,
+            pointStyle: "rectRounded",
+            padding: 16,
+            font: {
+              size: 12,
+              weight: "600"
             }
           }
         },
-        plugins: [valueLabelPlugin]
-      });
+        tooltip: {
+          callbacks: {
+            label(context) {
+              return `${context.dataset.label}: ${Number(context.raw).toFixed(2)}`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { color: "#57534e" }
+        },
+        y: {
+          beginAtZero: true,
+          grid: { color: "#e7e5e4" },
+          ticks: {
+            color: "#57534e",
+            callback: (value) => Number(value).toFixed(0)
+          },
+          title: {
+            display: true,
+            text: "Score / Mean Gain",
+            color: "#44403c",
+            font: { size: 12, weight: "600" }
+          }
+        }
+      }
+    }
+  });
+
+  if (sop3Ctx && !sop3Ctx.dataset.boundLeave) {
+    sop3Ctx.addEventListener("mouseleave", () => {
+      sop3HoveredDatasetIndex = null;
+      setSop3DefaultInsight();
+      applySop3DatasetStyles();
+    });
+    sop3Ctx.dataset.boundLeave = "true";
+  }
+}
+
+sop3SortButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    sop3Sort = button.dataset.sop3Sort;
+    renderSop3();
+  });
+});
+
+sop3FilterCheckboxes.forEach((cb) => {
+  cb.addEventListener("change", () => {
+    const count = sop3FilterCheckboxes.filter((item) => item.checked).length;
+
+    if (count === 0) {
+      cb.checked = true;
+      renderSop3();
+      return;
     }
 
-    sop3MetricButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        sop3Metric = button.dataset.sop3Metric;
-        renderSop3();
-      });
-    });
-
-    sop3SortButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        sop3Sort = button.dataset.sop3Sort;
-        renderSop3();
-      });
-    });
+    renderSop3();
+  });
+});
 
     renderSop1('grades');
     renderSop2(false);
     renderSop3();
     showDashboard('sop1');
+  });
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    AOS.init({
+      once: false,
+      mirror: true,
+      duration: 900,
+      offset: 80,
+      easing: "ease-out-cubic",
+      anchorPlacement: "top-center"
+    });
   });
 </script>
 {% endblock %}

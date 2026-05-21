@@ -25,41 +25,55 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: "#f2f6f6",
-              100: "#e3ecec",
-              200: "#c7d9da",
-              300: "#a8c3c4",
-              400: "#7fa1a4",
-              500: "#5f8185",
-              600: "#47686c",
-              700: "#365256",
-              800: "#2f4548",
-              900: "#293b3d"
-            },
-            accent: {
-              50: "#fff7ed",
-              100: "#ffedd5",
-              200: "#fed7aa",
-              300: "#fdba74",
-              400: "#fb923c",
-              500: "#f97316",
-              600: "#ea580c"
-            }
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50: "#fcf4f4",
+            100: "#f9e8ec",
+            200: "#f3d1da",
+            300: "#e8acbd",
+            400: "#d987a2",
+            500: "#cb758e",
+            600: "#b85f79",
+            700: "#9b4a62",
+            800: "#7c384d",
+            900: "#602434"
           },
-          fontFamily: {
-            sans: ["Inter", "sans-serif"]
+          accent: {
+            50: "#f4f6f3",
+            100: "#e6ebe4",
+            200: "#ced7cb",
+            300: "#afbdab",
+            400: "#8a9d86",
+            500: "#6b7f68",
+            600: "#515e4f",
+            700: "#445042",
+            800: "#374035",
+            900: "#2a3029"
           },
-          boxShadow: {
-            soft: "0 10px 30px rgba(0,0,0,0.08)"
+          canvas: {
+            50: "#fcfaf8",
+            100: "#f6f3f1",
+            200: "#ebe5e1",
+            300: "#ddd3cc"
+          },
+          ink: {
+            900: "#131313",
+            700: "#3b3735",
+            500: "#6f6762"
           }
+        },
+        fontFamily: {
+          sans: ["Inter", "sans-serif"]
+        },
+        boxShadow: {
+          soft: "0 10px 30px rgba(96, 36, 52, 0.10)"
         }
       }
     }
+  }
   </script>
 
   <style>
@@ -111,7 +125,7 @@
         </button>
 
         <nav class="hidden items-center gap-6 text-sm font-medium text-stone-600 md:flex">
-          <a href="#problem" data-nav-link class="transition hover:text-brand-800">Problem</a>
+          <a href="#overview" data-nav-link class="transition hover:text-brand-800">Overview</a>
           <a href="#literature" data-nav-link class="transition hover:text-brand-800">Literature</a>
           <a href="#methods" data-nav-link class="transition hover:text-brand-800">Methodology</a>
           <a href="#results" data-nav-link class="transition hover:text-brand-800">Results</a>
@@ -123,7 +137,7 @@
 
       <div id="mobile-menu" class="hidden border-t border-stone-200 py-3 md:hidden">
         <nav class="flex flex-col gap-2 text-sm font-medium text-stone-700">
-          <a href="#problem" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Problem</a>
+          <a href="#overview" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Overview</a>
           <a href="#literature" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Literature</a>
           <a href="#methods" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Methodology</a>
           <a href="#results" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Results</a>
