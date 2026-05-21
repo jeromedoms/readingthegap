@@ -1,0 +1,345 @@
+{% extends "base.html" %}
+
+{% block title %}SOP 1 Dashboard | Reading the Gap{% endblock %}
+
+{% block meta_description %}Dashboard for SOP 1: grade levels, school types, and proficiency levels in Philippine basic education reading outcomes.{% endblock %}
+
+{% block content %}
+<section class="border-b border-stone-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <a href="{{ url_for('main.index') }}" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 transition hover:text-brand-800">
+      <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+      Back to overview
+    </a>
+
+    <div class="mt-6 max-w-3xl">
+      <p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-brand-700">
+        <span class="material-symbols-outlined text-[18px]">format_list_numbered</span>
+        SOP 1 Dashboard
+      </p>
+      <h1 class="mt-3 text-3xl font-black uppercase leading-tight text-stone-950 sm:text-5xl">
+        Reading non-readiness and proficiency across learner groups
+      </h1>
+      <p class="mt-4 text-sm leading-7 text-stone-600 sm:text-base">
+        This dashboard focuses on three views: grade-level non-readiness, school-type proficiency, and overall proficiency-level distribution.
+      </p>
+    </div>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
+      <div class="rounded-3xl border border-stone-200 bg-stone-50 p-5">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">View A</p>
+        <p class="mt-2 text-lg font-bold text-stone-950">Grade levels</p>
+        <p class="mt-2 text-sm text-stone-500">Shows where non-readiness becomes more severe.</p>
+      </div>
+      <div class="rounded-3xl border border-stone-200 bg-stone-50 p-5">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">View B</p>
+        <p class="mt-2 text-lg font-bold text-stone-950">School types</p>
+        <p class="mt-2 text-sm text-stone-500">Compares proficiency rates across school classifications.</p>
+      </div>
+      <div class="rounded-3xl border border-stone-200 bg-stone-50 p-5">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">View C</p>
+        <p class="mt-2 text-lg font-bold text-stone-950">Proficiency levels</p>
+        <p class="mt-2 text-sm text-stone-500">Shows distribution of learners across proficiency bands.</p>
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-[28px] border border-stone-200 bg-white p-5 shadow-sm">
+      <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Interactive chart</p>
+          <h2 class="mt-1 text-xl font-bold text-stone-950">SOP 1 data views</h2>
+          <p class="mt-1 text-sm text-stone-500">Switch views and filter data directly.</p>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <button type="button" data-sop1-view="grades" class="rounded-full border border-brand-300 bg-brand-50 px-3 py-2 text-xs font-semibold text-brand-800 transition">
+            SOP 1A — Grade Levels
+          </button>
+          <button type="button" data-sop1-view="schools" class="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold text-stone-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
+            SOP 1B — School Types
+          </button>
+          <button type="button" data-sop1-view="levels" class="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold text-stone-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
+            SOP 1C — Proficiency Levels
+          </button>
+        </div>
+      </div>
+
+      <div id="sop1SchoolFilters" class="mt-4 hidden flex-wrap gap-2 rounded-2xl border border-stone-200 bg-stone-50 p-3">
+        <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
+          <input type="checkbox" class="h-4 w-4 accent-[#365256]" data-school-filter="Madrasah MEP" checked>
+          Madrasah MEP
+        </label>
+        <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
+          <input type="checkbox" class="h-4 w-4 accent-[#365256]" data-school-filter="National Average" checked>
+          National Average
+        </label>
+        <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
+          <input type="checkbox" class="h-4 w-4 accent-[#365256]" data-school-filter="Last Mile" checked>
+          Last Mile
+        </label>
+        <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
+          <input type="checkbox" class="h-4 w-4 accent-[#365256]" data-school-filter="GIDA" checked>
+          GIDA
+        </label>
+        <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
+          <input type="checkbox" class="h-4 w-4 accent-[#365256]" data-school-filter="Hardship Post" checked>
+          Hardship Post
+        </label>
+        <label class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700">
+          <input type="checkbox" class="h-4 w-4 accent-[#365256]" data-school-filter="IP Ed" checked>
+          IP Ed
+        </label>
+      </div>
+
+      <div class="mt-5 grid gap-6 xl:grid-cols-12">
+        <div class="xl:col-span-8">
+          <div class="h-[380px] sm:h-[460px]">
+            <canvas id="sop1Chart"></canvas>
+          </div>
+        </div>
+
+        <div class="xl:col-span-4 rounded-[24px] bg-brand-50/60 p-5">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-800">
+            <span class="material-symbols-outlined text-[18px]">visibility</span>
+            Interpretation
+          </p>
+          <h3 id="sop1InsightTitle" class="mt-3 text-lg font-bold text-stone-950">Higher grade levels show heavier reading non-readiness.</h3>
+          <p id="sop1InsightText" class="mt-2 text-sm leading-7 text-stone-600">
+            Reading difficulty remains high as learners move into upper grade levels, suggesting that early deficits are not fully corrected over time.
+          </p>
+
+          <div class="mt-6 rounded-2xl border border-brand-100 bg-white/80 p-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Use this view to</p>
+            <ul class="mt-3 space-y-2 text-sm leading-6 text-stone-600">
+              <li>Compare highest and lowest performers.</li>
+              <li>Hide categories to isolate contrasts.</li>
+              <li>Read percentages directly at the end of each bar.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof Chart === "undefined") return;
+
+    const brand = {
+      50: "#f2f6f6",
+      100: "#e3ecec",
+      200: "#c7d9da",
+      300: "#a8c3c4",
+      400: "#7fa1a4",
+      500: "#5f8185",
+      600: "#47686c",
+      700: "#365256",
+      800: "#2f4548",
+      900: "#293b3d"
+    };
+
+    const valueLabelPlugin = {
+      id: "valueLabelPlugin",
+      afterDatasetsDraw(chart) {
+        const { ctx } = chart;
+        const dataset = chart.data.datasets[0];
+        const meta = chart.getDatasetMeta(0);
+        if (!dataset || !meta || chart.config.type !== "bar") return;
+
+        ctx.save();
+        ctx.fillStyle = "#2f4548";
+        ctx.font = "600 12px Inter, sans-serif";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "middle";
+
+        meta.data.forEach((bar, index) => {
+          const value = dataset.data[index];
+          if (value == null) return;
+          ctx.fillText(`${value}%`, bar.x + 8, bar.y);
+        });
+
+        ctx.restore();
+      }
+    };
+
+    const nonReadinessData = {{ non_readiness|tojson }};
+    const proficiencyData = {{ proficiency|tojson }};
+    const proficiencyLevelsData = {{ proficiency_levels|tojson }};
+
+    const schoolColorMap = {
+      "Madrasah MEP": "#365256",
+      "National Average": "#47686c",
+      "Last Mile": "#5f8185",
+      "GIDA": "#7fa1a4",
+      "Hardship Post": "#a8c3c4",
+      "IP Ed": "#c7d9da"
+    };
+
+    const sop1Buttons = Array.from(document.querySelectorAll("[data-sop1-view]"));
+    const schoolFiltersWrap = document.getElementById("sop1SchoolFilters");
+    const schoolCheckboxes = Array.from(document.querySelectorAll("[data-school-filter]"));
+    const sop1InsightTitle = document.getElementById("sop1InsightTitle");
+    const sop1InsightText = document.getElementById("sop1InsightText");
+    const ctx = document.getElementById("sop1Chart");
+
+    let chart = null;
+    let currentView = "grades";
+
+    function baseHorizontalBarOptions(max = 100, xAxisTitle = "") {
+      return {
+        responsive: true,
+        maintainAspectRatio: false,
+        indexAxis: "y",
+        layout: { padding: { right: 56 } },
+        plugins: { legend: { display: false } },
+        scales: {
+          x: {
+            beginAtZero: true,
+            max,
+            grid: { color: "#e7e5e4" },
+            ticks: {
+              color: "#57534e",
+              callback: (value) => `${value}%`
+            },
+            title: {
+              display: !!xAxisTitle,
+              text: xAxisTitle,
+              color: "#44403c",
+              font: { size: 12, weight: "600" }
+            }
+          },
+          y: {
+            grid: { display: false },
+            ticks: { color: "#57534e" }
+          }
+        }
+      };
+    }
+
+    function setButtonState(active) {
+      sop1Buttons.forEach((button) => {
+        const isActive = button.dataset.sop1View === active;
+        button.className = isActive
+          ? "rounded-full border border-brand-300 bg-brand-50 px-3 py-2 text-xs font-semibold text-brand-800 transition"
+          : "rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold text-stone-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800";
+      });
+    }
+
+    function visibleSchools() {
+      const visible = schoolCheckboxes
+        .filter((cb) => cb.checked)
+        .map((cb) => cb.dataset.schoolFilter);
+
+      return proficiencyData.filter((item) => visible.includes(item.label));
+    }
+
+    function render(view) {
+      currentView = view;
+      setButtonState(view);
+
+      if (chart) {
+        chart.destroy();
+        chart = null;
+      }
+
+      if (view === "grades") {
+        schoolFiltersWrap.classList.add("hidden");
+        sop1InsightTitle.textContent = "Higher grade levels show heavier reading non-readiness.";
+        sop1InsightText.textContent = "Reading difficulty remains high as learners move into upper grade levels, suggesting that early deficits are not fully corrected over time.";
+
+        chart = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: nonReadinessData.map((d) => d.label),
+            datasets: [{
+              data: nonReadinessData.map((d) => Number(d.value)),
+              backgroundColor: brand[700],
+              borderRadius: 10
+            }]
+          },
+          options: baseHorizontalBarOptions(100, "Non-readiness (%)"),
+          plugins: [valueLabelPlugin]
+        });
+      } else if (view === "schools") {
+        schoolFiltersWrap.classList.remove("hidden");
+        const data = visibleSchools();
+
+        sop1InsightTitle.textContent = "School context strongly affects reading proficiency.";
+        sop1InsightText.textContent = "Proficiency rates vary sharply by school classification, and the widest gaps appear in already marginalized school contexts.";
+
+        chart = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: data.map((item) => item.label),
+            datasets: [{
+              data: data.map((item) => Number(item.value)),
+              backgroundColor: data.map((item) => schoolColorMap[item.label] || brand[700]),
+              borderRadius: 10
+            }]
+          },
+          options: baseHorizontalBarOptions(100, "Proficiency (%)"),
+          plugins: [valueLabelPlugin]
+        });
+      } else if (view === "levels") {
+        schoolFiltersWrap.classList.add("hidden");
+        sop1InsightTitle.textContent = "Most learners are concentrated in the low proficiency range.";
+        sop1InsightText.textContent = "The distribution shows that most assessed learners remain in the low proficient category, leaving only a smaller share at adequate levels and above.";
+
+        chart = new Chart(ctx, {
+          type: "doughnut",
+          data: {
+            labels: proficiencyLevelsData.map((d) => d.label),
+            datasets: [{
+              data: proficiencyLevelsData.map((d) => Number(d.value)),
+              backgroundColor: [brand[700], "#c2410c", "#94a3b8"],
+              borderWidth: 0
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: {
+                  color: "#57534e",
+                  usePointStyle: true,
+                  pointStyle: "circle"
+                }
+              }
+            }
+          }
+        });
+      }
+
+      requestAnimationFrame(() => {
+        if (chart) chart.resize();
+      });
+    }
+
+    sop1Buttons.forEach((button) => {
+      button.addEventListener("click", () => render(button.dataset.sop1View));
+    });
+
+    schoolCheckboxes.forEach((cb) => {
+    cb.addEventListener("change", () => {
+        const count = schoolCheckboxes.filter((item) => item.checked).length;
+
+        if (count === 0) {
+        cb.checked = true;
+        return;
+        }
+
+        if (currentView === "schools") {
+        render("schools");
+        }
+    });
+    });
+
+    render("grades");
+  });
+</script>
+{% endblock %}
