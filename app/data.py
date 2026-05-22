@@ -91,3 +91,34 @@ INTERVENTIONS = [
         "mean_gain": 12.83,
     },
 ]
+
+TEAM_MEMBERS = [
+    {
+        "name": "Proponent 1",
+        "profile_url": "",
+    },
+    {
+        "name": "Proponent 2",
+        "profile_url": "",
+    },
+    {
+        "name": "Proponent 3",
+        "profile_url": "",
+    },
+    {
+        "name": "Proponent 4",
+        "profile_url": "",
+    },
+    {
+        "name": "Proponent 5",
+        "profile_url": "",
+    },
+    {
+        "name": "Proponent 6",
+        "profile_url": "",
+    },
+    {
+        "name": "Proponent 7",
+        "profile_url": "",
+    },
+]
