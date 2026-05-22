@@ -207,13 +207,17 @@
         The study is guided by three central questions.
       </h2>
       <p class="mt-4 text-sm leading-7 text-ink-500 sm:text-base">
-        This section defines the core problems investigated in the study, focusing on the extent of reading difficulty, the systemic conditions that sustain it, and the interventions that show measurable effects on reading performance.
+        Click a research question to reveal its corresponding tables and analytical interpretation.
       </p>
     </div>
 
-    <div class="mt-8 grid gap-4">
-      <article
-        class="rounded-3xl border border-brand-100 bg-white p-5 shadow-soft"
+    <div class="mt-8 grid gap-4 lg:grid-cols-3">
+      <button
+        type="button"
+        data-sop-toggle="sop1"
+        aria-expanded="true"
+        aria-controls="sopContent"
+        class="sop-toggle-card rounded-3xl border border-brand-300 bg-white p-5 text-left shadow-soft transition hover:-translate-y-1 hover:border-brand-300 hover:bg-brand-50"
         data-aos="fade-up"
         data-aos-delay="100"
         data-aos-duration="800"
@@ -229,29 +233,37 @@
             </h3>
           </div>
         </div>
-      </article>
+      </button>
 
-      <article
-        class="rounded-3xl border border-accent-200 bg-white p-5 shadow-soft"
+      <button
+        type="button"
+        data-sop-toggle="sop2"
+        aria-expanded="false"
+        aria-controls="sopContent"
+        class="sop-toggle-card rounded-3xl border border-brand-100 bg-white p-5 text-left shadow-soft transition hover:-translate-y-1 hover:border-brand-300 hover:bg-brand-50"
         data-aos="fade-up"
         data-aos-delay="180"
         data-aos-duration="800"
       >
         <div class="flex items-start gap-4">
-          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-accent-100 text-accent-700">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-brand-100 text-brand-700">
             <span class="text-sm font-black">02</span>
           </div>
           <div>
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent-700">Research Question 2</p>
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Research Question 2</p>
             <h3 class="mt-2 text-lg font-bold leading-snug text-ink-900">
               What are the systemic factors contributing to the persistent reading literacy gap in Philippine basic education?
             </h3>
           </div>
         </div>
-      </article>
+      </button>
 
-      <article
-        class="rounded-3xl border border-brand-100 bg-white p-5 shadow-soft"
+      <button
+        type="button"
+        data-sop-toggle="sop3"
+        aria-expanded="false"
+        aria-controls="sopContent"
+        class="sop-toggle-card rounded-3xl border border-brand-100 bg-white p-5 text-left shadow-soft transition hover:-translate-y-1 hover:border-brand-300 hover:bg-brand-50"
         data-aos="fade-up"
         data-aos-delay="260"
         data-aos-duration="800"
@@ -267,7 +279,202 @@
             </h3>
           </div>
         </div>
-      </article>
+      </button>
+    </div>
+
+    <div
+      id="sopContent"
+      class="mt-8 rounded-[32px] border border-brand-100 bg-white p-5 shadow-soft sm:p-6"
+      data-aos="fade-up"
+      data-aos-delay="320"
+      data-aos-duration="850"
+    >
+      <!-- SOP 1 content -->
+      <div data-sop-panel="sop1" class="sop-content-panel">
+        <div class="max-w-3xl">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Research Question 1</p>
+        </div>
+
+        <div class="mt-6 grid gap-6 xl:grid-cols-3">
+          <div class="overflow-hidden rounded-3xl border border-brand-100 xl:col-span-1">
+            <div class="border-b border-brand-100 bg-brand-50 px-4 py-3">
+              <p class="text-sm font-bold text-ink-900">Table 1A — Non-Readiness Rate by Grade Level (%)</p>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="min-w-full text-sm">
+                <thead class="bg-canvas-50 text-left text-ink-700">
+                  <tr>
+                    <th class="px-4 py-3 font-semibold">#</th>
+                    <th class="px-4 py-3 font-semibold">Grade Level</th>
+                    <th class="px-4 py-3 font-semibold">Non-Readiness Rate</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-brand-100 text-ink-700">
+                  <tr><td class="px-4 py-3">1</td><td class="px-4 py-3">Grade 1 (MT)</td><td class="px-4 py-3">74%</td></tr>
+                  <tr><td class="px-4 py-3">2</td><td class="px-4 py-3">Grade 2 (FIL)</td><td class="px-4 py-3">34%</td></tr>
+                  <tr><td class="px-4 py-3">3</td><td class="px-4 py-3">Grade 3 (FIL)</td><td class="px-4 py-3">23%</td></tr>
+                  <tr><td class="px-4 py-3">4</td><td class="px-4 py-3">Grade 4 (ENG)</td><td class="px-4 py-3">74%</td></tr>
+                  <tr><td class="px-4 py-3">5</td><td class="px-4 py-3">Grade 5 (ENG)</td><td class="px-4 py-3">67%</td></tr>
+                  <tr><td class="px-4 py-3">6</td><td class="px-4 py-3">Grade 6 (ENG)</td><td class="px-4 py-3">74%</td></tr>
+                  <tr><td class="px-4 py-3">7</td><td class="px-4 py-3">Grade 7 (ENG)</td><td class="px-4 py-3">88%</td></tr>
+                  <tr><td class="px-4 py-3">8</td><td class="px-4 py-3">Grade 8 (ENG)</td><td class="px-4 py-3">88%</td></tr>
+                  <tr><td class="px-4 py-3">9</td><td class="px-4 py-3">Grade 9 (ENG)</td><td class="px-4 py-3">83%</td></tr>
+                  <tr><td class="px-4 py-3">10</td><td class="px-4 py-3">Grade 10 (ENG)</td><td class="px-4 py-3">82%</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="overflow-hidden rounded-3xl border border-brand-100 xl:col-span-1">
+            <div class="border-b border-brand-100 bg-brand-50 px-4 py-3">
+              <p class="text-sm font-bold text-ink-900">Table 1B — Proficiency Rate by School Classification (%)</p>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="min-w-full text-sm">
+                <thead class="bg-canvas-50 text-left text-ink-700">
+                  <tr>
+                    <th class="px-4 py-3 font-semibold">#</th>
+                    <th class="px-4 py-3 font-semibold">School Classification</th>
+                    <th class="px-4 py-3 font-semibold">Proficiency Rate</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-brand-100 text-ink-700">
+                  <tr><td class="px-4 py-3">1</td><td class="px-4 py-3">Madrasah MEP School</td><td class="px-4 py-3">91%</td></tr>
+                  <tr><td class="px-4 py-3">2</td><td class="px-4 py-3">National Average</td><td class="px-4 py-3">40%</td></tr>
+                  <tr><td class="px-4 py-3">3</td><td class="px-4 py-3">Last Mile School</td><td class="px-4 py-3">13%</td></tr>
+                  <tr><td class="px-4 py-3">4</td><td class="px-4 py-3">GIDA School</td><td class="px-4 py-3">12%</td></tr>
+                  <tr><td class="px-4 py-3">5</td><td class="px-4 py-3">Hardship Post School</td><td class="px-4 py-3">2%</td></tr>
+                  <tr><td class="px-4 py-3">6</td><td class="px-4 py-3">IP Ed School</td><td class="px-4 py-3">0%</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="overflow-hidden rounded-3xl border border-brand-100 xl:col-span-1">
+            <div class="border-b border-brand-100 bg-brand-50 px-4 py-3">
+              <p class="text-sm font-bold text-ink-900">Table 1C — Proficiency Level Distribution (%)</p>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="min-w-full text-sm">
+                <thead class="bg-canvas-50 text-left text-ink-700">
+                  <tr>
+                    <th class="px-4 py-3 font-semibold">#</th>
+                    <th class="px-4 py-3 font-semibold">Proficiency Level</th>
+                    <th class="px-4 py-3 font-semibold">Percentage</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-brand-100 text-ink-700">
+                  <tr><td class="px-4 py-3">1</td><td class="px-4 py-3">Low Proficient</td><td class="px-4 py-3">77.61%</td></tr>
+                  <tr><td class="px-4 py-3">2</td><td class="px-4 py-3">Not Proficient</td><td class="px-4 py-3">6.9%</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 space-y-4 text-sm leading-7 text-ink-600 sm:text-base">
+          <p>
+            Data from the Department of Education's National Achievement Test consistently reveal alarming non-readiness rates across grade levels. Non-readiness rates are particularly pronounced at the secondary level, with Grades 7 through 10 recording rates of 82–88%, suggesting that foundational reading deficiencies formed in primary years persist and even worsen without targeted intervention.
+          </p>
+          <p>
+            The transition from mother tongue-based instruction in Grade 1 (74% non-readiness) to Filipino in Grade 2 shows a temporary improvement (34%), but the shift to English-medium instruction beginning in Grade 4 coincides with a sharp rise in non-readiness rates—74% in Grade 4, escalating to 88% by junior high school. This pattern underscores the critical role of language medium transition in shaping reading outcomes.
+          </p>
+          <p>
+            School classification data reveal a stark inequality: while Madrasah MEP schools report a proficiency rate of 91%, the national average stands at only 40%, and marginalized school categories trail far behind. GIDA schools at 12%, Hardship Post schools at 2%, and IP education schools at 0% highlight the geographic and socioeconomic dimensions of the literacy gap. Proficiency level distributions confirm that 77.61% of students fall in the low proficient category, with 6.9% classified as not proficient—placing fewer than 16% of students at adequate or higher literacy levels.
+          </p>
+        </div>
+      </div>
+
+      <!-- SOP 2 content -->
+      <div data-sop-panel="sop2" class="sop-content-panel hidden">
+        <div class="max-w-3xl">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Research Question 2</p>
+        </div>
+
+        <div class="mt-6 overflow-hidden rounded-3xl border border-brand-100">
+          <div class="border-b border-brand-100 bg-brand-50 px-4 py-3">
+            <p class="text-sm font-bold text-ink-900">Table 2 — Systemic Factors Affecting Reading Literacy</p>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="min-w-full text-sm">
+              <thead class="bg-canvas-50 text-left text-ink-700">
+                <tr>
+                  <th class="px-4 py-3 font-semibold">#</th>
+                  <th class="px-4 py-3 font-semibold">Factor</th>
+                  <th class="px-4 py-3 font-semibold">Numerical Value</th>
+                  <th class="px-4 py-3 font-semibold">Educational Implication</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-brand-100 text-ink-700">
+                <tr><td class="px-4 py-3">1</td><td class="px-4 py-3">Learning Poverty</td><td class="px-4 py-3">91%</td><td class="px-4 py-3">Unable to read simple text by age 10</td></tr>
+                <tr><td class="px-4 py-3">2</td><td class="px-4 py-3">PISA Below Proficiency</td><td class="px-4 py-3">76%</td><td class="px-4 py-3">Below minimum reading proficiency</td></tr>
+                <tr><td class="px-4 py-3">3</td><td class="px-4 py-3">Last Mile Schools</td><td class="px-4 py-3">7144 schools</td><td class="px-4 py-3">Accessibility disadvantages</td></tr>
+                <tr><td class="px-4 py-3">4</td><td class="px-4 py-3">Teacher Mismatch</td><td class="px-4 py-3">62%</td><td class="px-4 py-3">Teachers outside specialization</td></tr>
+                <tr><td class="px-4 py-3">5</td><td class="px-4 py-3">Instructional Loss</td><td class="px-4 py-3">42 days/yr</td><td class="px-4 py-3">Reduced classroom exposure</td></tr>
+                <tr><td class="px-4 py-3">6</td><td class="px-4 py-3">Childhood Stunting</td><td class="px-4 py-3">23.6%</td><td class="px-4 py-3">Cognitive risks affecting literacy</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="mt-6 space-y-4 text-sm leading-7 text-ink-600 sm:text-base">
+          <p>
+            The literacy crisis in the Philippines is not merely a classroom problem—it is a systemic one, rooted in structural conditions that transcend teacher effort or student motivation. The 91% learning poverty rate, as defined by the World Bank, represents the most fundamental measure of this failure: children are reaching age 10 without the ability to read a simple sentence.
+          </p>
+          <p>
+            Teacher mismatch, at 62%, represents one of the most tractable yet consistently unaddressed challenges. When teachers are deployed outside their area of preparation—particularly in subject areas like English, where both content knowledge and language proficiency are critical—students receive instruction that lacks the necessary depth and scaffolding. Compounded by an average of 42 days of instructional loss annually due to natural disasters, community disruptions, and administrative events, effective teaching time is substantially compressed.
+          </p>
+          <p>
+            At 23.6%, the childhood stunting rate in the Philippines means that nearly one in four children enters formal schooling with nutritional deficits that impair working memory, phonological awareness, and language processing—the very cognitive functions that underpin reading acquisition. Addressing literacy through classroom strategies alone, without attending to the nutritional and developmental preconditions of learning, is likely to produce only limited results.
+          </p>
+        </div>
+      </div>
+
+      <!-- SOP 3 content -->
+      <div data-sop-panel="sop3" class="sop-content-panel hidden">
+        <div class="max-w-3xl">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Research Question 3</p>
+        </div>
+
+        <div class="mt-6 overflow-hidden rounded-3xl border border-brand-100">
+          <div class="border-b border-brand-100 bg-brand-50 px-4 py-3">
+            <p class="text-sm font-bold text-ink-900">Table 3 — Effectiveness of Instructional Intervention Strategies</p>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="min-w-full text-sm">
+              <thead class="bg-canvas-50 text-left text-ink-700">
+                <tr>
+                  <th class="px-4 py-3 font-semibold">#</th>
+                  <th class="px-4 py-3 font-semibold">Intervention Strategy</th>
+                  <th class="px-4 py-3 font-semibold">Sample Size (n)</th>
+                  <th class="px-4 py-3 font-semibold">Pretest Mean</th>
+                  <th class="px-4 py-3 font-semibold">Posttest Mean</th>
+                  <th class="px-4 py-3 font-semibold">Mean Gain</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-brand-100 text-ink-700">
+                <tr><td class="px-4 py-3">1</td><td class="px-4 py-3">Genre-Based + Canva</td><td class="px-4 py-3">28</td><td class="px-4 py-3">61.75</td><td class="px-4 py-3">83.1</td><td class="px-4 py-3">+21.35</td></tr>
+                <tr><td class="px-4 py-3">2</td><td class="px-4 py-3">Music Integration</td><td class="px-4 py-3">60</td><td class="px-4 py-3">58.4</td><td class="px-4 py-3">79.2</td><td class="px-4 py-3">+20.8</td></tr>
+                <tr><td class="px-4 py-3">3</td><td class="px-4 py-3">Canva-assisted CIRC</td><td class="px-4 py-3">28</td><td class="px-4 py-3">66.23</td><td class="px-4 py-3">86.68</td><td class="px-4 py-3">+20.45</td></tr>
+                <tr><td class="px-4 py-3">4</td><td class="px-4 py-3">VR Scaffolding</td><td class="px-4 py-3">273</td><td class="px-4 py-3">64.51</td><td class="px-4 py-3">82.47</td><td class="px-4 py-3">+17.96</td></tr>
+                <tr><td class="px-4 py-3">5</td><td class="px-4 py-3">CORI</td><td class="px-4 py-3">72</td><td class="px-4 py-3">71.32</td><td class="px-4 py-3">84.15</td><td class="px-4 py-3">+12.83</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="mt-6 space-y-4 text-sm leading-7 text-ink-600 sm:text-base">
+          <p>
+            Evidence from intervention studies conducted within the Philippine and regional educational contexts demonstrates that well-designed instructional approaches can produce meaningful gains in reading performance, even within constrained classroom conditions. Genre-based instruction combined with Canva-supported multimodal tasks emerged as the most effective strategy, with a mean gain of 21.35 points.
+          </p>
+          <p>
+            Music integration leveraged the neurological overlap between musical processing and phonological awareness to produce a gain of 20.8 points, while Canva-assisted CIRC demonstrated that cooperative reading structures are significantly enhanced through digital tool integration (gain: 20.45). These three top-performing strategies share a common feature: they combine collaborative or creative engagement with structured literacy scaffolding.
+          </p>
+          <p>
+            VR scaffolding, despite requiring higher resource investment, produced a noteworthy gain of 17.96 points across the largest sample (n=273), affirming that immersive environments can sustain engagement and build contextual comprehension at scale. CORI achieved a 12.83-point gain, underscoring the role of intrinsic motivation in sustained reading development.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -589,77 +796,87 @@
             </section>
 
 
+            <!-- SOP 3 -->
+         <section data-dashboard-panel="sop3" class="dashboard-panel">
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">SOP 3</p>
+        <h3 class="mt-1 text-lg font-bold text-ink-900">
+          Which instructional intervention strategies have demonstrated measurable effectiveness in improving reading performance among Filipino learners?
+        </h3>
+        <p class="mt-1 text-sm text-ink-500">
+          Compare pretest, posttest, and mean gain together, while checking the sample size shown for each intervention.
+        </p>
+      </div>
+    </div>
 
-          <section data-dashboard-panel="sop3" class="dashboard-panel">
-            <div class="flex flex-col gap-4">
-              <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-                <div>
-                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">SOP 3</p>
-                  <h3 class="mt-1 text-lg font-bold text-ink-900">Which instructional intervention strategies have demonstrated measurable effectiveness in improving reading performance among Filipino learners?</h3>
-                  <p class="mt-1 text-sm text-ink-500">Compare pretest, posttest, and mean gain together, then sort or filter interventions.</p>
-                </div>
-              </div>
+    <div class="flex flex-wrap gap-2">
+      <button type="button" data-sop3-sort="gain" class="rounded-full border border-brand-300 bg-brand-50 px-3 py-2 text-xs font-semibold text-brand-800 transition">
+        Sort by mean gain
+      </button>
+      <button type="button" data-sop3-sort="pretest" class="rounded-full border border-accent-200 bg-accent-50 px-3 py-2 text-xs font-semibold text-accent-800 transition">
+        Sort by pretest
+      </button>
+      <button type="button" data-sop3-sort="posttest" class="rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-semibold text-ink-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
+        Sort by posttest
+      </button>
+      <button type="button" data-sop3-sort="sample" class="rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-semibold text-ink-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
+        Sort by sample size
+      </button>
+      <button type="button" data-sop3-sort="alpha" class="rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-semibold text-ink-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
+        Sort alphabetically
+      </button>
+    </div>
 
-              <div class="flex flex-wrap gap-2">
-                <button type="button" data-sop3-sort="gain" class="rounded-full border border-brand-300 bg-brand-50 px-3 py-2 text-xs font-semibold text-brand-800 transition">
-                  Sort by mean
-                </button>
-                <button type="button" data-sop3-sort="pretest" class="rounded-full border border-accent-200 bg-accent-50 px-3 py-2 text-xs font-semibold text-accent-800 transition">
-                  Sort by pretest
-                </button>
-                <button type="button" data-sop3-sort="posttest" class="rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-semibold text-ink-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
-                  Sort by posttest
-                </button>
-                <button type="button" data-sop3-sort="alpha" class="rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-semibold text-ink-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800">
-                  Sort alphabetically
-                </button>
-              </div>
+    <div id="sop3Filters" class="flex flex-wrap gap-2 rounded-2xl border border-brand-100 bg-canvas-50 p-3">
+      <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
+        <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="Genre-Based + Canva" checked>
+        Genre-Based + Canva
+      </label>
+      <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
+        <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="Music Integration" checked>
+        Music Integration
+      </label>
+      <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
+        <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="Canva-assisted CIRC" checked>
+        Canva-assisted CIRC
+      </label>
+      <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
+        <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="VR Scaffolding" checked>
+        VR Scaffolding
+      </label>
+      <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
+        <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="CORI" checked>
+        CORI
+      </label>
+    </div>
 
-              <div id="sop3Filters" class="flex flex-wrap gap-2 rounded-2xl border border-brand-100 bg-canvas-50 p-3">
-                <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
-                  <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="Genre-Based + Canva" checked>
-                  Genre-Based + Canva
-                </label>
-                <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
-                  <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="Music Integration" checked>
-                  Music Integration
-                </label>
-                <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
-                  <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="Canva-assisted CIRC" checked>
-                  Canva-assisted CIRC
-                </label>
-                <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
-                  <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="VR Scaffolding" checked>
-                  VR Scaffolding
-                </label>
-                <label class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-2 text-xs font-medium text-ink-700">
-                  <input type="checkbox" class="h-4 w-4 accent-[#9b4a62]" data-sop3-filter="CORI" checked>
-                  CORI
-                </label>
-              </div>
+    <div class="grid gap-6 xl:grid-cols-12">
+      <div class="xl:col-span-8">
+        <div class="h-[380px] sm:h-[460px]">
+          <canvas id="sop3Chart"></canvas>
+        </div>
+        <p class="mt-3 text-xs leading-6 text-ink-500">
+          Labels show the intervention name and sample size on a second line as <span class="font-semibold text-ink-700">n=...</span>.
+        </p>
+      </div>
 
-              <div class="grid gap-6 xl:grid-cols-12">
-                <div class="xl:col-span-8">
-                  <div class="h-[380px] sm:h-[460px]">
-                    <canvas id="sop3Chart"></canvas>
-                  </div>
-                </div>
-
-                <div class="xl:col-span-4 rounded-[24px] bg-brand-50/70 p-5">
-                  <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-800">
-                    <span class="material-symbols-outlined text-[18px]">visibility</span>
-                    Interpretation
-                  </p>
-                  <h4 id="sop3InsightTitle" class="mt-3 text-base font-bold text-ink-900">
-                    Grouped bars show each intervention’s starting point, ending point, and observed gain.
-                  </h4>
-                  <p id="sop3InsightText" class="mt-2 text-sm leading-7 text-ink-500">
-                    Compare the three bars within each intervention to read baseline, final performance, and improvement at the same time.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
+      <div class="xl:col-span-4 rounded-[24px] bg-brand-50/70 p-5">
+        <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-800">
+          <span class="material-symbols-outlined text-[18px]">visibility</span>
+          Interpretation
+        </p>
+        <h4 id="sop3InsightTitle" class="mt-3 text-base font-bold text-ink-900">
+          Grouped bars show each intervention’s baseline, final performance, gain, and sample context.
+        </h4>
+        <p id="sop3InsightText" class="mt-2 text-sm leading-7 text-ink-500">
+          Compare the three bars within each intervention to read pretest, posttest, and mean gain, while checking the sample size shown in each label and tooltip.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
         </div>
       </div>
     </div>
@@ -960,7 +1177,22 @@ const ink = {
     const nonReadinessData = {{ non_readiness|tojson }};
     const proficiencyData = {{ proficiency|tojson }};
     const systemicFactorsData = {{ systemic_factors|tojson }};
-    const interventionsData = {{ interventions|tojson }};
+
+    const interventionsData = {{ interventions|tojson }}.map((item) => ({
+  label: item.label,
+  sampleSize:
+    item.label === "Genre-Based + Canva" ? 28 :
+    item.label === "Music Integration" ? 60 :
+    item.label === "Canva-assisted CIRC" ? 28 :
+    item.label === "VR Scaffolding" ? 273 :
+    item.label === "CORI" ? 72 : null,
+  pretest: Number(item.pretest),
+  posttest: Number(item.posttest),
+  gain: Number(item.gain)
+}));
+
+console.table(interventionsData);
+
 
     const proficiencyLevelsData = [
     { label: "Not Proficient", value: 6.61 },
@@ -981,6 +1213,34 @@ const ink = {
 
     const dashboardTabs = Array.from(document.querySelectorAll("[data-dashboard-tab]"));
     const dashboardPanels = Array.from(document.querySelectorAll("[data-dashboard-panel]"));
+
+
+    const sopOverviewButtons = Array.from(document.querySelectorAll("[data-sop-toggle]"));
+const sopOverviewPanels = Array.from(document.querySelectorAll("[data-sop-panel]"));
+
+function setActiveSopPanel(panelName) {
+  sopOverviewButtons.forEach((button) => {
+    const isActive = button.dataset.sopToggle === panelName;
+    button.setAttribute("aria-expanded", String(isActive));
+    button.classList.toggle("border-brand-300", isActive);
+    button.classList.toggle("bg-brand-50", isActive);
+    button.classList.toggle("border-brand-100", !isActive);
+    button.classList.toggle("bg-white", !isActive);
+  });
+
+  sopOverviewPanels.forEach((panel) => {
+    panel.classList.toggle("hidden", panel.dataset.sopPanel !== panelName);
+  });
+}
+
+sopOverviewButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const panelName = button.dataset.sopToggle;
+    setActiveSopPanel(panelName);
+  });
+});
+
+setActiveSopPanel("sop1");
 
     let sop1Chart = null;
     let sop2Chart = null;
@@ -1718,7 +1978,8 @@ function renderSop2() {
   cards.forEach((card) => sop2FactorsGrid.appendChild(card));
   updateSop2ActiveCard(cards);
 }
-    // SOP 3
+   
+// SOP 3
 const sop3SortButtons = Array.from(document.querySelectorAll("[data-sop3-sort]"));
 const sop3FilterCheckboxes = Array.from(document.querySelectorAll("[data-sop3-filter]"));
 const sop3InsightTitle = document.getElementById("sop3InsightTitle");
@@ -1742,32 +2003,21 @@ function sortedInterventions() {
   if (sop3Sort === "alpha") {
     copy.sort((a, b) => a.label.localeCompare(b.label));
   } else if (sop3Sort === "pretest") {
-    copy.sort((a, b) => Number(b.pretest) - Number(a.pretest));
+    copy.sort((a, b) => b.pretest - a.pretest);
   } else if (sop3Sort === "posttest") {
-    copy.sort((a, b) => Number(b.posttest) - Number(a.posttest));
+    copy.sort((a, b) => b.posttest - a.posttest);
+  } else if (sop3Sort === "sample") {
+    copy.sort((a, b) => (b.sampleSize ?? 0) - (a.sampleSize ?? 0));
   } else {
-    copy.sort((a, b) => Number(b.gain) - Number(a.gain));
+    copy.sort((a, b) => b.gain - a.gain);
   }
 
   return copy;
 }
 
 function setSop3DefaultInsight() {
-  sop3InsightTitle.textContent = "Grouped bars show each intervention’s starting point, ending point, and observed gain.";
-  sop3InsightText.textContent = "Compare the three bars within each intervention to read baseline, final performance, and improvement at the same time.";
-}
-
-function hexToRgba(hex, alpha) {
-  const clean = hex.replace("#", "");
-  const full = clean.length === 3
-    ? clean.split("").map((ch) => ch + ch).join("")
-    : clean;
-
-  const r = parseInt(full.slice(0, 2), 16);
-  const g = parseInt(full.slice(2, 4), 16);
-  const b = parseInt(full.slice(4, 6), 16);
-
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  sop3InsightTitle.textContent = "Grouped bars show each intervention’s starting point, ending point, gain, and sample context.";
+  sop3InsightText.textContent = "Compare the three bars within each intervention to read baseline, final performance, and improvement, while checking the sample size shown in the label and tooltip.";
 }
 
 function sop3DatasetColor(baseColor, datasetIndex) {
@@ -1780,7 +2030,7 @@ function sop3DatasetColor(baseColor, datasetIndex) {
 function applySop3DatasetStyles() {
   if (!sop3Chart) return;
 
-  const baseColors = ["#e8acbd", "#7c384d", "#6b7f68"];
+  const baseColors = ["#e8acbd", "#9b4a62", "#6b7f68"];
 
   sop3Chart.data.datasets.forEach((dataset, datasetIndex) => {
     const color = sop3DatasetColor(baseColors[datasetIndex], datasetIndex);
@@ -1801,41 +2051,49 @@ function renderSop3() {
   sop3HoveredDatasetIndex = null;
   setSop3DefaultInsight();
 
-  if (sop3Chart) sop3Chart.destroy();
+  if (sop3Chart) {
+    sop3Chart.destroy();
+    sop3Chart = null;
+  }
+
+  if (!sop3Ctx || !data.length) return;
 
   sop3Chart = new Chart(sop3Ctx, {
     type: "bar",
     data: {
-      labels: data.map((item) => item.label),
+      labels: data.map((item) => [
+        item.label,
+        item.sampleSize ? `n=${item.sampleSize}` : "n unavailable"
+      ]),
       datasets: [
-  {
-    label: "Pretest",
-    data: data.map((item) => Number(item.pretest)),
-    backgroundColor: data.map(() => "#e8acbd"), // brand-300
-    borderColor: data.map(() => "#e8acbd"),
-    borderWidth: 1,
-    borderRadius: 8,
-    borderSkipped: false
-  },
-  {
-    label: "Posttest",
-    data: data.map((item) => Number(item.posttest)),
-    backgroundColor: data.map(() => "#9b4a62"), // brand-700
-    borderColor: data.map(() => "#9b4a62"),
-    borderWidth: 1,
-    borderRadius: 8,
-    borderSkipped: false
-  },
-  {
-    label: "Mean Gain",
-    data: data.map((item) => Number(item.gain)),
-    backgroundColor: data.map(() => "#6b7f68"), // accent-500
-    borderColor: data.map(() => "#6b7f68"),
-    borderWidth: 1,
-    borderRadius: 8,
-    borderSkipped: false
-  }
-] 
+        {
+          label: "Pretest",
+          data: data.map((item) => item.pretest),
+          backgroundColor: data.map(() => "#e8acbd"),
+          borderColor: data.map(() => "#e8acbd"),
+          borderWidth: 1,
+          borderRadius: 8,
+          borderSkipped: false
+        },
+        {
+          label: "Posttest",
+          data: data.map((item) => item.posttest),
+          backgroundColor: data.map(() => "#9b4a62"),
+          borderColor: data.map(() => "#9b4a62"),
+          borderWidth: 1,
+          borderRadius: 8,
+          borderSkipped: false
+        },
+        {
+          label: "Mean Gain",
+          data: data.map((item) => item.gain),
+          backgroundColor: data.map(() => "#6b7f68"),
+          borderColor: data.map(() => "#6b7f68"),
+          borderWidth: 1,
+          borderRadius: 8,
+          borderSkipped: false
+        }
+      ]
     },
     options: {
       responsive: true,
@@ -1857,9 +2115,10 @@ function renderSop3() {
           const metricKey = ["pretest", "posttest", "gain"][datasetIndex];
           const metricLabel = ["Pretest", "Posttest", "Mean Gain"][datasetIndex];
           const metricValue = Number(item[metricKey]).toFixed(2);
+          const sampleText = item.sampleSize ? `based on n=${item.sampleSize}` : "with sample size unavailable";
 
           sop3InsightTitle.textContent = `${item.label} — ${metricLabel}`;
-          sop3InsightText.textContent = `${metricLabel} for ${item.label} is ${metricValue}. The other two metric bars are dimmed so you can focus on this measure first.`;
+          sop3InsightText.textContent = `${metricLabel} for ${item.label} is ${metricValue}, ${sampleText}. The other two metric bars are dimmed so you can focus on this measure first.`;
 
           if (sop3HoveredDatasetIndex !== datasetIndex) {
             sop3HoveredDatasetIndex = datasetIndex;
@@ -1895,8 +2154,16 @@ function renderSop3() {
         },
         tooltip: {
           callbacks: {
+            title(context) {
+              const item = data[context[0].dataIndex];
+              return item.sampleSize
+                ? `${item.label} (n=${item.sampleSize})`
+                : `${item.label}`;
+            },
             label(context) {
-              return `${context.dataset.label}: ${Number(context.raw).toFixed(2)}`;
+              const item = data[context.dataIndex];
+              const base = `${context.dataset.label}: ${Number(context.raw).toFixed(2)}`;
+              return item.sampleSize ? `${base} | n=${item.sampleSize}` : base;
             }
           }
         }
@@ -1904,7 +2171,11 @@ function renderSop3() {
       scales: {
         x: {
           grid: { display: false },
-          ticks: { color: "#57534e" }
+          ticks: {
+            color: "#57534e",
+            autoSkip: false,
+            maxRotation: 0
+          }
         },
         y: {
           beginAtZero: true,
@@ -1956,7 +2227,7 @@ sop3FilterCheckboxes.forEach((cb) => {
 });
 
     renderSop1('grades');
-    renderSop2(false);
+    renderSop2();
     renderSop3();
     showDashboard('sop1');
   });

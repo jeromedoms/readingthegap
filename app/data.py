@@ -62,30 +62,35 @@ SYSTEMIC_FACTORS = [
 INTERVENTIONS = [
     {
         "strategy": "Genre-Based + Canva",
+        "sample_size": 28,
         "pretest_mean": 61.75,
         "posttest_mean": 83.10,
         "mean_gain": 21.35,
     },
     {
         "strategy": "Music Integration",
+        "sample_size": 60,
         "pretest_mean": 58.40,
         "posttest_mean": 79.20,
         "mean_gain": 20.80,
     },
     {
         "strategy": "Canva-assisted CIRC",
+        "sample_size": 28,
         "pretest_mean": 66.23,
         "posttest_mean": 86.68,
         "mean_gain": 20.45,
     },
     {
         "strategy": "VR Scaffolding",
+        "sample_size": 273,
         "pretest_mean": 64.51,
         "posttest_mean": 82.47,
         "mean_gain": 17.96,
     },
     {
         "strategy": "CORI",
+        "sample_size": 72,
         "pretest_mean": 71.32,
         "posttest_mean": 84.15,
         "mean_gain": 12.83,
