@@ -1,355 +1,338 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>{% block title %}Reading the Gap | BSED-ENG Group 2{% endblock %}</title>
-  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-  <meta
-    name="description"
-    content="{% block meta_description %}A data-driven capstone landing page on literacy challenges and instructional interventions in Philippine basic education.{% endblock %}"
-  />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800;900&display=swap"
-  rel="stylesheet"
->
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0"
-  >
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          brand: {
-            50: "#fcf4f4",
-            100: "#f9e8ec",
-            200: "#f3d1da",
-            300: "#e8acbd",
-            400: "#d987a2",
-            500: "#cb758e",
-            600: "#b85f79",
-            700: "#9b4a62",
-            800: "#7c384d",
-            900: "#602434"
-          },
-          accent: {
-            50: "#f4f6f3",
-            100: "#e6ebe4",
-            200: "#ced7cb",
-            300: "#afbdab",
-            400: "#8a9d86",
-            500: "#6b7f68",
-            600: "#515e4f",
-            700: "#445042",
-            800: "#374035",
-            900: "#2a3029"
-          },
-          canvas: {
-            50: "#fcfaf8",
-            100: "#f6f3f1",
-            200: "#ebe5e1",
-            300: "#ddd3cc"
-          },
-          ink: {
-            900: "#131313",
-            700: "#3b3735",
-            500: "#6f6762"
-          }
-        },
-        fontFamily: {
-            sans: ["Inter", "sans-serif"],
-            display: ["Playfair Display", "serif"]
-            },
-        boxShadow: {
-          soft: "0 10px 30px rgba(96, 36, 52, 0.10)"
-        }
-      }
-    }
-  }
-  </script>
-
-  <style>
-    .material-symbols-outlined {
-      font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24;
-      line-height: 1;
-      display: inline-flex;
-      vertical-align: middle;
-    }
-  </style>
-
-  <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
-  {% block head %}{% endblock %}
-</head>
-
-<body class="min-h-full bg-stone-50 text-stone-900 antialiased">
-  <a
-    href="#main-content"
-    class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:shadow"
-  >
-    Skip to content
-  </a>
-
-  {% block navbar %}
-  <header class="sticky top-0 z-50 border-b border-stone-200/80 bg-stone-50/90 backdrop-blur">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex min-h-[72px] items-center justify-between gap-4">
-        <a
-          href="{{ url_for('main.index') }}"
-          class="inline-flex items-center gap-2 text-sm font-extrabold uppercase tracking-[0.2em] text-stone-900"
-        >
-          <span class="material-symbols-outlined text-[18px] text-brand-700">menu_book</span>
-          <span>Reading the Gap</span>
-        </a>
-
-        <button
-          id="mobile-menu-button"
-          type="button"
-          class="inline-flex items-center justify-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold text-stone-700 shadow-sm transition hover:bg-stone-100 md:hidden"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <span class="material-symbols-outlined text-[18px]">menu</span>
-          <span>Menu</span>
-        </button>
-
-        <nav class="hidden items-center gap-6 text-sm font-medium text-stone-600 md:flex">
-          <a href="#overview" data-nav-link class="transition hover:text-brand-800">Overview</a>
-          <a href="#literature" data-nav-link class="transition hover:text-brand-800">Literature</a>
-          <a href="#methods" data-nav-link class="transition hover:text-brand-800">Methodology</a>
-          <a href="#results" data-nav-link class="transition hover:text-brand-800">Results</a>
-          <a href="#dashboards" data-nav-link class="transition hover:text-brand-800">Dashboard</a>
-          <a href="#recommendations" data-nav-link class="transition hover:text-brand-800">Recommendations</a>
-          <a href="#team" data-nav-link class="transition hover:text-brand-800">Team</a>
-        </nav>
-      </div>
-
-      <div id="mobile-menu" class="hidden border-t border-stone-200 py-3 md:hidden">
-        <nav class="flex flex-col gap-2 text-sm font-medium text-stone-700">
-          <a href="#overview" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Overview</a>
-          <a href="#literature" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Literature</a>
-          <a href="#methods" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Methodology</a>
-          <a href="#results" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Results</a>
-          <a href="#dashboards" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Dashboard</a>
-          <a href="#recommendations" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Recommendations</a>
-          <a href="#team" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Team</a>
-        </nav>
-      </div>
-    </div>
-  </header>
-  {% endblock %}
-
-  <main id="main-content">
-    {% block content %}{% endblock %}
-  </main>
-
-  {% block footer %}
-  <footer class="border-t border-stone-200 bg-white">
-    <div class="mx-auto max-w-7xl px-4 py-8 text-sm text-stone-500 sm:px-6 lg:px-8">
-      BSED-ENG Group 2 · Capstone Project · Reading the Gap
-    </div>
-  </footer>
-  {% endblock %}
-
-  <button
-    id="scroll-to-top"
-    type="button"
-    aria-label="Scroll to top"
-    class="pointer-events-none fixed bottom-5 right-5 z-40 inline-flex h-12 w-12 translate-y-3 items-center justify-center rounded-full border border-brand-200 bg-white/95 text-brand-700 shadow-soft opacity-0 transition-all duration-300 hover:bg-brand-50 hover:text-brand-800"
-  >
-    <span class="material-symbols-outlined text-[22px]">arrow_upward</span>
-  </button>
-
-  <script src="{{ url_for('static', filename='app.js') }}"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const header = document.querySelector("header");
-      const button = document.getElementById("mobile-menu-button");
-      const menu = document.getElementById("mobile-menu");
-      const navLinks = Array.from(document.querySelectorAll("[data-nav-link]"));
-      const scrollToTopButton = document.getElementById("scroll-to-top");
-
-      const trackedIds = [
-        "overview",
-        "literature",
-        "methods",
-        "results",
-        "dashboards",
-        "recommendations",
-        "team"
-      ];
-
-      const sections = trackedIds
-        .map(id => document.getElementById(id))
-        .filter(Boolean);
-
-      const getHeaderOffset = () => {
-        return header ? header.offsetHeight + 16 : 96;
-      };
-
-      const clearActiveStates = () => {
-        navLinks.forEach(link => {
-          link.classList.remove(
-            "text-brand-800",
-            "text-stone-950",
-            "font-semibold",
-            "underline",
-            "underline-offset-8",
-            "decoration-2",
-            "decoration-brand-700",
-            "bg-brand-50"
-          );
-        });
-      };
-
-      const setActiveLink = (id) => {
-        clearActiveStates();
-
-        navLinks.forEach(link => {
-          if (link.getAttribute("href") === `#${id}`) {
-            link.classList.add("text-brand-800", "font-semibold");
-
-            if (link.closest("#mobile-menu")) {
-              link.classList.add("bg-brand-50");
-            } else {
-              link.classList.add(
-                "underline",
-                "underline-offset-8",
-                "decoration-2",
-                "decoration-brand-700"
-              );
-            }
-          }
-        });
-      };
-
-      const scrollToTarget = (id) => {
-        const target = document.getElementById(id);
-        if (!target) return;
-
-        const top = target.getBoundingClientRect().top + window.pageYOffset - getHeaderOffset();
-
-        window.scrollTo({
-          top,
-          behavior: "smooth"
-        });
-      };
-
-      const updateActiveSection = () => {
-        const offset = getHeaderOffset() + 40;
-        const scrollPosition = window.scrollY + offset;
-        let currentSectionId = sections[0]?.id || "";
-
-        sections.forEach(section => {
-          const top = section.offsetTop;
-          const bottom = top + section.offsetHeight;
-
-          if (scrollPosition >= top && scrollPosition < bottom) {
-            currentSectionId = section.id;
-          }
-        });
-
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 8 && sections.length) {
-          currentSectionId = sections[sections.length - 1].id;
-        }
-
-        if (currentSectionId) {
-          setActiveLink(currentSectionId);
-        }
-      };
-
-      const toggleScrollToTop = () => {
-        if (!scrollToTopButton) return;
-
-        const shouldShow = window.scrollY > 320;
-
-        scrollToTopButton.classList.toggle("pointer-events-none", !shouldShow);
-        scrollToTopButton.classList.toggle("opacity-0", !shouldShow);
-        scrollToTopButton.classList.toggle("translate-y-3", !shouldShow);
-
-        scrollToTopButton.classList.toggle("pointer-events-auto", shouldShow);
-        scrollToTopButton.classList.toggle("opacity-100", shouldShow);
-        scrollToTopButton.classList.toggle("translate-y-0", shouldShow);
-      };
-
-      if (button && menu) {
-        button.addEventListener("click", () => {
-          const isHidden = menu.classList.contains("hidden");
-          menu.classList.toggle("hidden");
-          button.setAttribute("aria-expanded", isHidden ? "true" : "false");
-        });
-      }
-
-      if (scrollToTopButton) {
-        scrollToTopButton.addEventListener("click", () => {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-        });
-      }
-
-      navLinks.forEach(link => {
-        link.addEventListener("click", (event) => {
-          const href = link.getAttribute("href");
-          if (!href || !href.startsWith("#")) return;
-
-          event.preventDefault();
-
-          const targetId = href.replace("#", "");
-          setActiveLink(targetId);
-          scrollToTarget(targetId);
-
-          if (menu && !menu.classList.contains("hidden")) {
-            menu.classList.add("hidden");
-            if (button) button.setAttribute("aria-expanded", "false");
-          }
-
-          history.replaceState(null, "", `#${targetId}`);
-        });
-      });
-
-      let ticking = false;
-      const onScroll = () => {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            updateActiveSection();
-            toggleScrollToTop();
-            ticking = false;
-          });
-          ticking = true;
-        }
-      };
-
-      updateActiveSection();
-      toggleScrollToTop();
-      window.addEventListener("scroll", onScroll, { passive: true });
-      window.addEventListener("resize", () => {
-        updateActiveSection();
-        toggleScrollToTop();
-      });
-      window.addEventListener("load", () => {
-        updateActiveSection();
-        toggleScrollToTop();
-      });
-      window.addEventListener("hashchange", updateActiveSection);
-    });
-  </script>
-
-  {% block scripts %}{% endblock %}
-</body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>{% block title %}Reading the Gap | BSED-ENG Group 2{% endblock %}</title>
+      <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+      <meta
+         name="description"
+         content="{% block meta_description %}A data-driven capstone landing page on literacy challenges and instructional interventions in Philippine basic education.{% endblock %}"
+         />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link
+         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800;900&display=swap"
+         rel="stylesheet"
+         >
+      <link
+         rel="stylesheet"
+         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0"
+         >
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+         tailwind.config = {
+           theme: {
+             extend: {
+               colors: {
+                 brand: {
+                   50: "#fcf4f4",
+                   100: "#f9e8ec",
+                   200: "#f3d1da",
+                   300: "#e8acbd",
+                   400: "#d987a2",
+                   500: "#cb758e",
+                   600: "#b85f79",
+                   700: "#9b4a62",
+                   800: "#7c384d",
+                   900: "#602434"
+                 },
+                 accent: {
+                   50: "#f4f6f3",
+                   100: "#e6ebe4",
+                   200: "#ced7cb",
+                   300: "#afbdab",
+                   400: "#8a9d86",
+                   500: "#6b7f68",
+                   600: "#515e4f",
+                   700: "#445042",
+                   800: "#374035",
+                   900: "#2a3029"
+                 },
+                 canvas: {
+                   50: "#fcfaf8",
+                   100: "#f6f3f1",
+                   200: "#ebe5e1",
+                   300: "#ddd3cc"
+                 },
+                 ink: {
+                   900: "#131313",
+                   700: "#3b3735",
+                   500: "#6f6762"
+                 }
+               },
+               fontFamily: {
+                   sans: ["Inter", "sans-serif"],
+                   display: ["Playfair Display", "serif"]
+                   },
+               boxShadow: {
+                 soft: "0 10px 30px rgba(96, 36, 52, 0.10)"
+               }
+             }
+           }
+         }
+      </script>
+      <style>
+         .material-symbols-outlined {
+         font-variation-settings:
+         'FILL' 0,
+         'wght' 400,
+         'GRAD' 0,
+         'opsz' 24;
+         line-height: 1;
+         display: inline-flex;
+         vertical-align: middle;
+         }
+      </style>
+      <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+      {% block head %}{% endblock %}
+   </head>
+   <body class="min-h-full bg-stone-50 text-stone-900 antialiased">
+      <a
+         href="#main-content"
+         class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:shadow"
+         >
+      Skip to content
+      </a>
+      {% block navbar %}
+      <header class="sticky top-0 z-50 border-b border-stone-200/80 bg-stone-50/90 backdrop-blur">
+         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex min-h-[72px] items-center justify-between gap-4">
+               <a
+                  href="{{ url_for('main.index') }}"
+                  class="inline-flex items-center gap-2 text-sm font-extrabold uppercase tracking-[0.2em] text-stone-900"
+                  >
+               <span class="material-symbols-outlined text-[18px] text-brand-700">menu_book</span>
+               <span>Reading the Gap</span>
+               </a>
+               <button
+                  id="mobile-menu-button"
+                  type="button"
+                  class="inline-flex items-center justify-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold text-stone-700 shadow-sm transition hover:bg-stone-100 md:hidden"
+                  aria-expanded="false"
+                  aria-controls="mobile-menu"
+                  >
+               <span class="material-symbols-outlined text-[18px]">menu</span>
+               <span>Menu</span>
+               </button>
+               <nav class="hidden items-center gap-6 text-sm font-medium text-stone-600 md:flex">
+                  <a href="#overview" data-nav-link class="transition hover:text-brand-800">Overview</a>
+                  <a href="#literature" data-nav-link class="transition hover:text-brand-800">Literature</a>
+                  <a href="#methods" data-nav-link class="transition hover:text-brand-800">Methodology</a>
+                  <a href="#results" data-nav-link class="transition hover:text-brand-800">Results</a>
+                  <a href="#dashboards" data-nav-link class="transition hover:text-brand-800">Dashboard</a>
+                  <a href="#recommendations" data-nav-link class="transition hover:text-brand-800">Recommendations</a>
+                  <a href="#team" data-nav-link class="transition hover:text-brand-800">Team</a>
+               </nav>
+            </div>
+            <div id="mobile-menu" class="hidden border-t border-stone-200 py-3 md:hidden">
+               <nav class="flex flex-col gap-2 text-sm font-medium text-stone-700">
+                  <a href="#overview" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Overview</a>
+                  <a href="#literature" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Literature</a>
+                  <a href="#methods" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Methodology</a>
+                  <a href="#results" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Results</a>
+                  <a href="#dashboards" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Dashboard</a>
+                  <a href="#recommendations" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Recommendations</a>
+                  <a href="#team" data-nav-link class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-800">Team</a>
+               </nav>
+            </div>
+         </div>
+      </header>
+      {% endblock %}
+      <main id="main-content">
+         {% block content %}{% endblock %}
+      </main>
+      {% block footer %}
+      <footer class="border-t border-stone-200 bg-white">
+         <div class="mx-auto max-w-7xl px-4 py-8 text-sm text-stone-500 sm:px-6 lg:px-8">
+            BSED-ENG Group 2 · Capstone Project · Reading the Gap
+         </div>
+      </footer>
+      {% endblock %}
+      <button
+         id="scroll-to-top"
+         type="button"
+         aria-label="Scroll to top"
+         class="pointer-events-none fixed bottom-5 right-5 z-40 inline-flex h-12 w-12 translate-y-3 items-center justify-center rounded-full border border-brand-200 bg-white/95 text-brand-700 shadow-soft opacity-0 transition-all duration-300 hover:bg-brand-50 hover:text-brand-800"
+         >
+      <span class="material-symbols-outlined text-[22px]">arrow_upward</span>
+      </button>
+      <script src="{{ url_for('static', filename='app.js') }}"></script>
+      <script>
+         document.addEventListener("DOMContentLoaded", () => {
+           const header = document.querySelector("header");
+           const button = document.getElementById("mobile-menu-button");
+           const menu = document.getElementById("mobile-menu");
+           const navLinks = Array.from(document.querySelectorAll("[data-nav-link]"));
+           const scrollToTopButton = document.getElementById("scroll-to-top");
+         
+           const trackedIds = [
+             "overview",
+             "literature",
+             "methods",
+             "results",
+             "dashboards",
+             "recommendations",
+             "team"
+           ];
+         
+           const sections = trackedIds
+             .map(id => document.getElementById(id))
+             .filter(Boolean);
+         
+           const getHeaderOffset = () => {
+             return header ? header.offsetHeight + 16 : 96;
+           };
+         
+           const clearActiveStates = () => {
+             navLinks.forEach(link => {
+               link.classList.remove(
+                 "text-brand-800",
+                 "text-stone-950",
+                 "font-semibold",
+                 "underline",
+                 "underline-offset-8",
+                 "decoration-2",
+                 "decoration-brand-700",
+                 "bg-brand-50"
+               );
+             });
+           };
+         
+           const setActiveLink = (id) => {
+             clearActiveStates();
+         
+             navLinks.forEach(link => {
+               if (link.getAttribute("href") === `#${id}`) {
+                 link.classList.add("text-brand-800", "font-semibold");
+         
+                 if (link.closest("#mobile-menu")) {
+                   link.classList.add("bg-brand-50");
+                 } else {
+                   link.classList.add(
+                     "underline",
+                     "underline-offset-8",
+                     "decoration-2",
+                     "decoration-brand-700"
+                   );
+                 }
+               }
+             });
+           };
+         
+           const scrollToTarget = (id) => {
+             const target = document.getElementById(id);
+             if (!target) return;
+         
+             const top = target.getBoundingClientRect().top + window.pageYOffset - getHeaderOffset();
+         
+             window.scrollTo({
+               top,
+               behavior: "smooth"
+             });
+           };
+         
+           const updateActiveSection = () => {
+             const offset = getHeaderOffset() + 40;
+             const scrollPosition = window.scrollY + offset;
+             let currentSectionId = sections[0]?.id || "";
+         
+             sections.forEach(section => {
+               const top = section.offsetTop;
+               const bottom = top + section.offsetHeight;
+         
+               if (scrollPosition >= top && scrollPosition < bottom) {
+                 currentSectionId = section.id;
+               }
+             });
+         
+             if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 8 && sections.length) {
+               currentSectionId = sections[sections.length - 1].id;
+             }
+         
+             if (currentSectionId) {
+               setActiveLink(currentSectionId);
+             }
+           };
+         
+           const toggleScrollToTop = () => {
+             if (!scrollToTopButton) return;
+         
+             const shouldShow = window.scrollY > 320;
+         
+             scrollToTopButton.classList.toggle("pointer-events-none", !shouldShow);
+             scrollToTopButton.classList.toggle("opacity-0", !shouldShow);
+             scrollToTopButton.classList.toggle("translate-y-3", !shouldShow);
+         
+             scrollToTopButton.classList.toggle("pointer-events-auto", shouldShow);
+             scrollToTopButton.classList.toggle("opacity-100", shouldShow);
+             scrollToTopButton.classList.toggle("translate-y-0", shouldShow);
+           };
+         
+           if (button && menu) {
+             button.addEventListener("click", () => {
+               const isHidden = menu.classList.contains("hidden");
+               menu.classList.toggle("hidden");
+               button.setAttribute("aria-expanded", isHidden ? "true" : "false");
+             });
+           }
+         
+           if (scrollToTopButton) {
+             scrollToTopButton.addEventListener("click", () => {
+               window.scrollTo({
+                 top: 0,
+                 behavior: "smooth"
+               });
+             });
+           }
+         
+           navLinks.forEach(link => {
+             link.addEventListener("click", (event) => {
+               const href = link.getAttribute("href");
+               if (!href || !href.startsWith("#")) return;
+         
+               event.preventDefault();
+         
+               const targetId = href.replace("#", "");
+               setActiveLink(targetId);
+               scrollToTarget(targetId);
+         
+               if (menu && !menu.classList.contains("hidden")) {
+                 menu.classList.add("hidden");
+                 if (button) button.setAttribute("aria-expanded", "false");
+               }
+         
+               history.replaceState(null, "", `#${targetId}`);
+             });
+           });
+         
+           let ticking = false;
+           const onScroll = () => {
+             if (!ticking) {
+               window.requestAnimationFrame(() => {
+                 updateActiveSection();
+                 toggleScrollToTop();
+                 ticking = false;
+               });
+               ticking = true;
+             }
+           };
+         
+           updateActiveSection();
+           toggleScrollToTop();
+           window.addEventListener("scroll", onScroll, { passive: true });
+           window.addEventListener("resize", () => {
+             updateActiveSection();
+             toggleScrollToTop();
+           });
+           window.addEventListener("load", () => {
+             updateActiveSection();
+             toggleScrollToTop();
+           });
+           window.addEventListener("hashchange", updateActiveSection);
+         });
+      </script>
+      {% block scripts %}{% endblock %}
+   </body>
 </html>
