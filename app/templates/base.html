@@ -162,6 +162,15 @@
   </footer>
   {% endblock %}
 
+  <button
+    id="scroll-to-top"
+    type="button"
+    aria-label="Scroll to top"
+    class="pointer-events-none fixed bottom-5 right-5 z-40 inline-flex h-12 w-12 translate-y-3 items-center justify-center rounded-full border border-brand-200 bg-white/95 text-brand-700 shadow-soft opacity-0 transition-all duration-300 hover:bg-brand-50 hover:text-brand-800"
+  >
+    <span class="material-symbols-outlined text-[22px]">arrow_upward</span>
+  </button>
+
   <script src="{{ url_for('static', filename='app.js') }}"></script>
 
   <script>
@@ -170,6 +179,7 @@
       const button = document.getElementById("mobile-menu-button");
       const menu = document.getElementById("mobile-menu");
       const navLinks = Array.from(document.querySelectorAll("[data-nav-link]"));
+      const scrollToTopButton = document.getElementById("scroll-to-top");
 
       const trackedIds = [
         "overview",
@@ -260,11 +270,34 @@
         }
       };
 
+      const toggleScrollToTop = () => {
+        if (!scrollToTopButton) return;
+
+        const shouldShow = window.scrollY > 320;
+
+        scrollToTopButton.classList.toggle("pointer-events-none", !shouldShow);
+        scrollToTopButton.classList.toggle("opacity-0", !shouldShow);
+        scrollToTopButton.classList.toggle("translate-y-3", !shouldShow);
+
+        scrollToTopButton.classList.toggle("pointer-events-auto", shouldShow);
+        scrollToTopButton.classList.toggle("opacity-100", shouldShow);
+        scrollToTopButton.classList.toggle("translate-y-0", shouldShow);
+      };
+
       if (button && menu) {
         button.addEventListener("click", () => {
           const isHidden = menu.classList.contains("hidden");
           menu.classList.toggle("hidden");
           button.setAttribute("aria-expanded", isHidden ? "true" : "false");
+        });
+      }
+
+      if (scrollToTopButton) {
+        scrollToTopButton.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
         });
       }
 
@@ -293,6 +326,7 @@
         if (!ticking) {
           window.requestAnimationFrame(() => {
             updateActiveSection();
+            toggleScrollToTop();
             ticking = false;
           });
           ticking = true;
@@ -300,9 +334,16 @@
       };
 
       updateActiveSection();
+      toggleScrollToTop();
       window.addEventListener("scroll", onScroll, { passive: true });
-      window.addEventListener("resize", updateActiveSection);
-      window.addEventListener("load", updateActiveSection);
+      window.addEventListener("resize", () => {
+        updateActiveSection();
+        toggleScrollToTop();
+      });
+      window.addEventListener("load", () => {
+        updateActiveSection();
+        toggleScrollToTop();
+      });
       window.addEventListener("hashchange", updateActiveSection);
     });
   </script>
