@@ -5,17 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>{% block title %}Reading the Gap{% endblock %}</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
   <meta
     name="description"
     content="{% block meta_description %}A data-driven capstone landing page on literacy challenges and instructional interventions in Philippine basic education.{% endblock %}"
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800;900&display=swap"
+  rel="stylesheet"
+>
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0"
@@ -66,8 +67,9 @@
           }
         },
         fontFamily: {
-          sans: ["Inter", "sans-serif"]
-        },
+            sans: ["Inter", "sans-serif"],
+            display: ["Playfair Display", "serif"]
+            },
         boxShadow: {
           soft: "0 10px 30px rgba(96, 36, 52, 0.10)"
         }
