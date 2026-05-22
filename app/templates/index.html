@@ -1733,7 +1733,7 @@ function sop3DatasetColor(baseColor, datasetIndex) {
 function applySop3DatasetStyles() {
   if (!sop3Chart) return;
 
-  const baseColors = ["#94a3b8", "#365256", "#c2410c"];
+  const baseColors = ["#e8acbd", "#7c384d", "#6b7f68"];
 
   sop3Chart.data.datasets.forEach((dataset, datasetIndex) => {
     const color = sop3DatasetColor(baseColors[datasetIndex], datasetIndex);
@@ -1761,34 +1761,34 @@ function renderSop3() {
     data: {
       labels: data.map((item) => item.label),
       datasets: [
-        {
-          label: "Pretest",
-          data: data.map((item) => Number(item.pretest)),
-          backgroundColor: data.map(() => "#94a3b8"),
-          borderColor: data.map(() => "#94a3b8"),
-          borderWidth: 1,
-          borderRadius: 8,
-          borderSkipped: false
-        },
-        {
-          label: "Posttest",
-          data: data.map((item) => Number(item.posttest)),
-          backgroundColor: data.map(() => "#365256"),
-          borderColor: data.map(() => "#365256"),
-          borderWidth: 1,
-          borderRadius: 8,
-          borderSkipped: false
-        },
-        {
-          label: "Mean Gain",
-          data: data.map((item) => Number(item.gain)),
-          backgroundColor: data.map(() => "#c2410c"),
-          borderColor: data.map(() => "#c2410c"),
-          borderWidth: 1,
-          borderRadius: 8,
-          borderSkipped: false
-        }
-      ]
+  {
+    label: "Pretest",
+    data: data.map((item) => Number(item.pretest)),
+    backgroundColor: data.map(() => "#e8acbd"), // brand-300
+    borderColor: data.map(() => "#e8acbd"),
+    borderWidth: 1,
+    borderRadius: 8,
+    borderSkipped: false
+  },
+  {
+    label: "Posttest",
+    data: data.map((item) => Number(item.posttest)),
+    backgroundColor: data.map(() => "#9b4a62"), // brand-700
+    borderColor: data.map(() => "#9b4a62"),
+    borderWidth: 1,
+    borderRadius: 8,
+    borderSkipped: false
+  },
+  {
+    label: "Mean Gain",
+    data: data.map((item) => Number(item.gain)),
+    backgroundColor: data.map(() => "#6b7f68"), // accent-500
+    borderColor: data.map(() => "#6b7f68"),
+    borderWidth: 1,
+    borderRadius: 8,
+    borderSkipped: false
+  }
+] 
     },
     options: {
       responsive: true,
