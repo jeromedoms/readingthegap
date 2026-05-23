@@ -236,7 +236,7 @@
            const updateActiveSection = () => {
              const offset = getHeaderOffset() + 40;
              const scrollPosition = window.scrollY + offset;
-             let currentSectionId = sections[0]?.id || "";
+             let currentSectionId = "";
          
              sections.forEach(section => {
                const top = section.offsetTop;
